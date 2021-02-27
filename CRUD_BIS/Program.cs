@@ -15,7 +15,7 @@ namespace CRUD_BIS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new PRESENTACION.USUARIO());
         }
     }
 }

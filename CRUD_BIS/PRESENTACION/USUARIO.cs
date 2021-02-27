@@ -5,13 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CRUD_BIS
+namespace CRUD_BIS.PRESENTACION
 {
-    public partial class Form1 : Form
+    public partial class USUARIO : Form
     {
-        public Form1()
+        public USUARIO()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
-﻿namespace CRUD_BIS
+﻿namespace CRUD_BIS.PRESENTACION
 {
-    partial class Form1
+    partial class USUARIO
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.Text = "USUARIO";
         }
 
         #endregion
     }
 }
-
