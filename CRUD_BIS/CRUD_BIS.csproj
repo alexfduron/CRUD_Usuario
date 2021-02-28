@@ -53,6 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DATOS\DATOS_CONEXION.cs" />
+    <Compile Include="DATOS\DATOS_USUARIO.cs" />
     <Compile Include="LOGICA\LOGICA_USUARIO.cs" />
     <Compile Include="PRESENTACION\FORM_USUARIO.cs">
       <SubType>Form</SubType>
@@ -86,9 +88,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DATOS\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\buscar 2.png" />
   </ItemGroup>
