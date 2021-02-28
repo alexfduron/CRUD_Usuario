@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//hacemos referencia al SQL
+//hacemos referencia a las herramientas del SQL Server
 using System.Data.SqlClient;
 //hacemos refereancia a la clase Logica_usuario
 using CRUD_BIS.LOGICA;
