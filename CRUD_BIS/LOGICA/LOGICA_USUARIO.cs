@@ -20,45 +20,45 @@ namespace CRUD_BIS.LOGICA
         public int ID_Usuario_3
         {
 
-            get { return ID_Usuario_3; }
+            get { return ID_Usuario_2; }
 
-            set { ID_Usuario_3 = value; }
+            set { ID_Usuario_2 = value; }
 
         }
 
         public string Nombre_3
         {
 
-            get { return Nombre_3; }
+            get { return Nombre_2; }
 
-            set { Nombre_3 = value; }
+            set { Nombre_2 = value; }
 
         }
 
         public string Pass_3
         {
 
-            get { return Pass_3; }
+            get { return Pass_2; }
 
-            set { Pass_3 = value; }
+            set { Pass_2 = value; }
 
         }
 
         public byte[] Icono_3
         {
 
-            get { return Icono_3; }
+            get { return Icono_2; }
 
-            set { Icono_3 = value; }
+            set { Icono_2 = value; }
 
         }
 
         public string Estado_3
         {
 
-            get { return Estado_3; }
+            get { return Estado_2; }
 
-            set { Estado_3 = value; }
+            set { Estado_2 = value; }
 
         }
 

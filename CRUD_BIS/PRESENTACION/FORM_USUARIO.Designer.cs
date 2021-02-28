@@ -57,7 +57,8 @@
             this.btn_Borrar = new System.Windows.Forms.Button();
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pic_Logo = new System.Windows.Forms.PictureBox();
+            this.OFD_Foto = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,7 +71,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.pnl_Menu2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Foto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,7 +79,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pic_Logo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -333,6 +334,7 @@
             this.btn_Guardar.TabIndex = 5;
             this.btn_Guardar.Text = "Guardar Nuevo";
             this.btn_Guardar.UseVisualStyleBackColor = true;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
             // 
             // pnl_Menu2
             // 
@@ -354,6 +356,7 @@
             this.pic_Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_Foto.TabIndex = 7;
             this.pic_Foto.TabStop = false;
+            this.pic_Foto.Click += new System.EventHandler(this.pic_Foto_Click);
             // 
             // btn_Buscar
             // 
@@ -387,6 +390,7 @@
             this.btn_Borrar.Size = new System.Drawing.Size(58, 45);
             this.btn_Borrar.TabIndex = 6;
             this.btn_Borrar.UseVisualStyleBackColor = false;
+            this.btn_Borrar.Click += new System.EventHandler(this.btn_Borrar_Click);
             // 
             // btn_Agregar
             // 
@@ -420,18 +424,22 @@
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pic_Logo
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = global::CRUD_BIS.Properties.Resources.Logo_BIS___Copy11;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 152);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pic_Logo.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Logo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pic_Logo.Image = global::CRUD_BIS.Properties.Resources.Logo_BIS___Copy11;
+            this.pic_Logo.InitialImage = null;
+            this.pic_Logo.Location = new System.Drawing.Point(0, 0);
+            this.pic_Logo.Name = "pic_Logo";
+            this.pic_Logo.Size = new System.Drawing.Size(200, 152);
+            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Logo.TabIndex = 0;
+            this.pic_Logo.TabStop = false;
+            // 
+            // OFD_Foto
+            // 
+            this.OFD_Foto.FileName = "openFileDialog1";
             // 
             // FORM_USUARIO
             // 
@@ -465,7 +473,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.pnl_Menu2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Foto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -473,7 +481,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pic_Logo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnl_Buscar;
@@ -501,5 +509,6 @@
         private System.Windows.Forms.Button btn_GuardarCambio;
         private System.Windows.Forms.Button btn_Volver;
         private System.Windows.Forms.Panel pnl_Menu2;
+        private System.Windows.Forms.OpenFileDialog OFD_Foto;
     }
 }
