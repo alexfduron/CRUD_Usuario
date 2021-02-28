@@ -1,6 +1,6 @@
 ﻿namespace CRUD_BIS.PRESENTACION
 {
-    partial class USUARIO
+    partial class FORM_USUARIO
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USUARIO));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FORM_USUARIO));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel_linea = new System.Windows.Forms.Panel();
+            this.txt_Buscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txt_Buscar = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_Buscar = new System.Windows.Forms.Button();
             this.btn_Borrar = new System.Windows.Forms.Button();
             this.btn_Agregar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,6 +62,19 @@
             this.panel1.Size = new System.Drawing.Size(961, 152);
             this.panel1.TabIndex = 0;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel_linea);
+            this.panel3.Controls.Add(this.txt_Buscar);
+            this.panel3.Controls.Add(this.btn_Buscar);
+            this.panel3.Controls.Add(this.btn_Borrar);
+            this.panel3.Controls.Add(this.btn_Agregar);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(200, 107);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(561, 45);
+            this.panel3.TabIndex = 4;
+            // 
             // panel_linea
             // 
             this.panel_linea.BackColor = System.Drawing.Color.White;
@@ -69,6 +84,20 @@
             this.panel_linea.Name = "panel_linea";
             this.panel_linea.Size = new System.Drawing.Size(387, 5);
             this.panel_linea.TabIndex = 3;
+            // 
+            // txt_Buscar
+            // 
+            this.txt_Buscar.BackColor = System.Drawing.Color.Black;
+            this.txt_Buscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Buscar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txt_Buscar.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Buscar.ForeColor = System.Drawing.Color.White;
+            this.txt_Buscar.Location = new System.Drawing.Point(0, 0);
+            this.txt_Buscar.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_Buscar.Name = "txt_Buscar";
+            this.txt_Buscar.Size = new System.Drawing.Size(387, 40);
+            this.txt_Buscar.TabIndex = 4;
+            this.txt_Buscar.TextChanged += new System.EventHandler(this.txt_Buscar_TextChanged);
             // 
             // label1
             // 
@@ -92,32 +121,23 @@
             this.panel2.Size = new System.Drawing.Size(200, 152);
             this.panel2.TabIndex = 2;
             // 
-            // panel3
+            // panel4
             // 
-            this.panel3.Controls.Add(this.panel_linea);
-            this.panel3.Controls.Add(this.txt_Buscar);
-            this.panel3.Controls.Add(this.btn_Buscar);
-            this.panel3.Controls.Add(this.btn_Borrar);
-            this.panel3.Controls.Add(this.btn_Agregar);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(200, 107);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(561, 45);
-            this.panel3.TabIndex = 4;
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 100);
+            this.panel4.TabIndex = 1;
             // 
-            // txt_Buscar
+            // dataGridView1
             // 
-            this.txt_Buscar.BackColor = System.Drawing.Color.Black;
-            this.txt_Buscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_Buscar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txt_Buscar.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Buscar.ForeColor = System.Drawing.Color.White;
-            this.txt_Buscar.Location = new System.Drawing.Point(0, 0);
-            this.txt_Buscar.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_Buscar.Name = "txt_Buscar";
-            this.txt_Buscar.Size = new System.Drawing.Size(387, 40);
-            this.txt_Buscar.TabIndex = 4;
-            this.txt_Buscar.TextChanged += new System.EventHandler(this.txt_Buscar_TextChanged);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(200, 190);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(561, 239);
+            this.dataGridView1.TabIndex = 1;
             // 
             // btn_Buscar
             // 
@@ -186,7 +206,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::CRUD_BIS.Properties.Resources.Logo_BIS___Copy11;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -195,21 +215,13 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 100);
-            this.panel4.TabIndex = 1;
-            // 
             // USUARIO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(961, 505);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
@@ -219,11 +231,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -242,5 +255,6 @@
         private System.Windows.Forms.Button btn_Agregar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

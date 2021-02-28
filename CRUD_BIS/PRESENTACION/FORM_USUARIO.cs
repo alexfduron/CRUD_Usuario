@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CRUD_BIS.PRESENTACION
 {
-    public partial class USUARIO : Form
+    public partial class FORM_USUARIO : Form
     {
-        public USUARIO()
+        public FORM_USUARIO()
         {
             InitializeComponent();
         }
