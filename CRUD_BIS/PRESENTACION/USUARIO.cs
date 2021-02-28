@@ -16,5 +16,10 @@ namespace CRUD_BIS.PRESENTACION
         {
             InitializeComponent();
         }
+
+        private void txt_Buscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
