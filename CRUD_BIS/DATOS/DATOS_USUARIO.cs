@@ -19,19 +19,51 @@ namespace CRUD_BIS.DATOS
 
         private int ID_Usuario_4;
 
-        public bool Insertar(LOGICA_USUARIO dt)
+        public bool Insertar(LOGICA_USUARIO Dt)
         {
 
             try
             {
 
+                DATOS_CONEXION.ABRIR();
 
+                Cmd = new SqlCommand("Insertar_Usuario", DATOS_CONEXION.CONEXION);
+
+                Cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                Cmd.Parameters.AddWithValue("@Nombre", Dt.Nombre_3);
+
+                Cmd.Parameters.AddWithValue("@Pass", Dt.Pass_3);
+
+                Cmd.Parameters.AddWithValue("@Imagen", Dt.Icono_3);
+
+                Cmd.Parameters.AddWithValue("@Estado", Dt.Estado_3);
+
+                if(Cmd.ExecuteNonQuery() != 0)
+                {
+
+                    return true;
+
+                }else
+                {
+
+                    return false;
+
+                }
 
             }
             catch(Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
+
+                return false;
+
+            }
+            finally
+            {
+
+                DATOS_CONEXION.CERRAR();
 
             }
 
