@@ -9,6 +9,8 @@ using System.Data.SqlClient;
 using CRUD_BIS.LOGICA;
 //hacemos referencia a los mensajes
 using System.Windows.Forms;
+//hacemos referencia a los datos
+using System.Data;
 
 namespace CRUD_BIS.DATOS
 {
@@ -19,15 +21,16 @@ namespace CRUD_BIS.DATOS
 
         private int ID_Usuario_4;
 
-        public bool Insertar(LOGICA_USUARIO Dt)
+        //aqui tenemos parametros de entrada, por lo que se llama a la capa de Logica
+        public bool Insertar_Usuario(CRUD_BIS.LOGICA.LOGICA_USUARIO Dt)
         {
 
             try
             {
 
-                DATOS_CONEXION.ABRIR();
+                CRUD_BIS.DATOS.DATOS_CONEXION.ABRIR();
 
-                Cmd = new SqlCommand("Insertar_Usuario", DATOS_CONEXION.CONEXION);
+                Cmd = new SqlCommand("Insertar_Usuario", CRUD_BIS.DATOS.DATOS_CONEXION.CONEXION);
 
                 Cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
@@ -63,7 +66,54 @@ namespace CRUD_BIS.DATOS
             finally
             {
 
-                DATOS_CONEXION.CERRAR();
+                CRUD_BIS.DATOS.DATOS_CONEXION.CERRAR();
+
+            }
+
+        }
+
+        //aqui no tenemos parametros de entrada
+        public DataTable Mostrar_Usuario()
+        {
+
+            try
+            {
+
+                CRUD_BIS.DATOS.DATOS_CONEXION.ABRIR();
+
+                Cmd = new SqlCommand("Mostrar_Usuario", CRUD_BIS.DATOS.DATOS_CONEXION.CONEXION);
+
+                if(Cmd.ExecuteNonQuery() != 0)
+                {
+
+                    DataTable Dt = new DataTable();
+
+                    SqlDataAdapter Da = new SqlDataAdapter(Cmd);
+
+                    Da.Fill(Dt);
+
+                    return Dt;
+
+                }else
+                {
+
+                    return null;
+
+                }
+
+            }
+            catch(Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+
+                return null;
+
+            }
+            finally
+            {
+
+                CRUD_BIS.DATOS.DATOS_CONEXION.CERRAR();
 
             }
 

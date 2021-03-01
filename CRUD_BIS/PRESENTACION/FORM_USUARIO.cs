@@ -22,6 +22,12 @@ namespace CRUD_BIS.PRESENTACION
 
             this.pnl_Menu2.Visible = false;
 
+            this.pnl_Menu2.Dock = DockStyle.Fill;
+
+            this.DGV_Listado.Dock = DockStyle.Fill;
+
+            Mostrar_Usuario();
+
         }
 
         private void txt_Buscar_TextChanged(object sender, EventArgs e)
@@ -33,6 +39,8 @@ namespace CRUD_BIS.PRESENTACION
         {
 
             this.pnl_Menu2.Visible = true;
+
+            this.lbl_Titulo.Text = "AGREGAR USUARIO";
 
             this.tableLayoutPanel1.Controls.Remove(this.btn_GuardarCambio);
 
@@ -95,7 +103,14 @@ namespace CRUD_BIS.PRESENTACION
 
                     Insertar_Usuario();
 
-                }else
+                    Mostrar_Usuario();
+
+                    this.lbl_Titulo.Text = "VER USUARIO";
+
+                    this.pnl_Menu2.Visible = false;
+
+                }
+                else
                 {
 
                     MessageBox.Show("Ingrese una Contraseña", "Sin Contraseña...", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -116,7 +131,7 @@ namespace CRUD_BIS.PRESENTACION
 
             CRUD_BIS.LOGICA.LOGICA_USUARIO Dt = new CRUD_BIS.LOGICA.LOGICA_USUARIO();
 
-            CRUD_BIS.DATOS.DATOS_USUARIO Fun = new CRUD_BIS.DATOS.DATOS_USUARIO();
+            CRUD_BIS.DATOS.DATOS_USUARIO Duser = new CRUD_BIS.DATOS.DATOS_USUARIO();
 
             Dt.Nombre_3 = this.txt_Nombre.Text;
 
@@ -130,12 +145,25 @@ namespace CRUD_BIS.PRESENTACION
 
             Dt.Estado_3 = "ACTIVO";
 
-            if(Fun.Insertar(Dt) == true)
+            if(Duser.Insertar_Usuario(Dt) == true)
             {
 
                 MessageBox.Show("Usuario Registrado", "Registro Correcto...", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
+
+        }
+
+        private void Mostrar_Usuario()
+        {
+
+            DataTable Dt;
+
+            CRUD_BIS.DATOS.DATOS_USUARIO ShowUser = new CRUD_BIS.DATOS.DATOS_USUARIO();
+
+            Dt = ShowUser.Mostrar_Usuario();
+
+            this.DGV_Listado.DataSource = Dt;
 
         }
 

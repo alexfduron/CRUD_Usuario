@@ -33,51 +33,51 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnl_Buscar = new System.Windows.Forms.Panel();
             this.txt_Buscar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.btn_Borrar = new System.Windows.Forms.Button();
+            this.btn_Agregar = new System.Windows.Forms.Button();
+            this.lbl_Titulo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pic_Logo = new System.Windows.Forms.PictureBox();
+            this.DGV_Listado = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pnl_Nombre = new System.Windows.Forms.Panel();
-            this.txt_Nombre = new System.Windows.Forms.TextBox();
-            this.lbl_Nombre = new System.Windows.Forms.Label();
+            this.pic_Foto = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pnl_Pass = new System.Windows.Forms.Panel();
             this.txt_Pass = new System.Windows.Forms.TextBox();
             this.lbl_Pass = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pnl_Nombre = new System.Windows.Forms.Panel();
+            this.txt_Nombre = new System.Windows.Forms.TextBox();
+            this.lbl_Nombre = new System.Windows.Forms.Label();
             this.pnl_Menu1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_Volver = new System.Windows.Forms.Button();
-            this.btn_GuardarCambio = new System.Windows.Forms.Button();
             this.btn_Guardar = new System.Windows.Forms.Button();
+            this.btn_GuardarCambio = new System.Windows.Forms.Button();
+            this.btn_Volver = new System.Windows.Forms.Button();
             this.pnl_Menu2 = new System.Windows.Forms.Panel();
-            this.pic_Foto = new System.Windows.Forms.PictureBox();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.btn_Borrar = new System.Windows.Forms.Button();
-            this.btn_Agregar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.OFD_Foto = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Listado)).BeginInit();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Foto)).BeginInit();
             this.panel8.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.pnl_Menu1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnl_Menu2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Foto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lbl_Titulo);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pic_Logo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -122,241 +122,6 @@
             this.txt_Buscar.Size = new System.Drawing.Size(609, 40);
             this.txt_Buscar.TabIndex = 4;
             this.txt_Buscar.TextChanged += new System.EventHandler(this.txt_Buscar_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Consolas", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(200, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(783, 107);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "USUARIO";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(983, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 152);
-            this.panel2.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 100);
-            this.panel4.TabIndex = 1;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 190);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(188, 239);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.pic_Foto);
-            this.panel5.Controls.Add(this.panel8);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(860, 273);
-            this.panel5.TabIndex = 2;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.pnl_Nombre);
-            this.panel6.Controls.Add(this.txt_Nombre);
-            this.panel6.Controls.Add(this.lbl_Nombre);
-            this.panel6.Location = new System.Drawing.Point(17, 44);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(613, 50);
-            this.panel6.TabIndex = 5;
-            // 
-            // pnl_Nombre
-            // 
-            this.pnl_Nombre.BackColor = System.Drawing.Color.White;
-            this.pnl_Nombre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Nombre.Location = new System.Drawing.Point(190, 47);
-            this.pnl_Nombre.Margin = new System.Windows.Forms.Padding(0);
-            this.pnl_Nombre.Name = "pnl_Nombre";
-            this.pnl_Nombre.Size = new System.Drawing.Size(423, 3);
-            this.pnl_Nombre.TabIndex = 3;
-            // 
-            // txt_Nombre
-            // 
-            this.txt_Nombre.BackColor = System.Drawing.Color.Black;
-            this.txt_Nombre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txt_Nombre.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Nombre.ForeColor = System.Drawing.Color.White;
-            this.txt_Nombre.Location = new System.Drawing.Point(190, 0);
-            this.txt_Nombre.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(423, 47);
-            this.txt_Nombre.TabIndex = 4;
-            // 
-            // lbl_Nombre
-            // 
-            this.lbl_Nombre.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbl_Nombre.Location = new System.Drawing.Point(0, 0);
-            this.lbl_Nombre.Name = "lbl_Nombre";
-            this.lbl_Nombre.Size = new System.Drawing.Size(190, 50);
-            this.lbl_Nombre.TabIndex = 5;
-            this.lbl_Nombre.Text = "Nombre:";
-            this.lbl_Nombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.pnl_Pass);
-            this.panel8.Controls.Add(this.txt_Pass);
-            this.panel8.Controls.Add(this.lbl_Pass);
-            this.panel8.Location = new System.Drawing.Point(17, 137);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(613, 50);
-            this.panel8.TabIndex = 6;
-            // 
-            // pnl_Pass
-            // 
-            this.pnl_Pass.BackColor = System.Drawing.Color.White;
-            this.pnl_Pass.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Pass.Location = new System.Drawing.Point(190, 47);
-            this.pnl_Pass.Margin = new System.Windows.Forms.Padding(0);
-            this.pnl_Pass.Name = "pnl_Pass";
-            this.pnl_Pass.Size = new System.Drawing.Size(423, 3);
-            this.pnl_Pass.TabIndex = 3;
-            // 
-            // txt_Pass
-            // 
-            this.txt_Pass.BackColor = System.Drawing.Color.Black;
-            this.txt_Pass.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txt_Pass.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Pass.ForeColor = System.Drawing.Color.White;
-            this.txt_Pass.Location = new System.Drawing.Point(190, 0);
-            this.txt_Pass.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_Pass.Name = "txt_Pass";
-            this.txt_Pass.Size = new System.Drawing.Size(423, 47);
-            this.txt_Pass.TabIndex = 4;
-            // 
-            // lbl_Pass
-            // 
-            this.lbl_Pass.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbl_Pass.Location = new System.Drawing.Point(0, 0);
-            this.lbl_Pass.Name = "lbl_Pass";
-            this.lbl_Pass.Size = new System.Drawing.Size(190, 50);
-            this.lbl_Pass.TabIndex = 5;
-            this.lbl_Pass.Text = "Contraseña:";
-            this.lbl_Pass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pnl_Menu1
-            // 
-            this.pnl_Menu1.Controls.Add(this.tableLayoutPanel1);
-            this.pnl_Menu1.Controls.Add(this.panel5);
-            this.pnl_Menu1.Location = new System.Drawing.Point(30, 43);
-            this.pnl_Menu1.Name = "pnl_Menu1";
-            this.pnl_Menu1.Size = new System.Drawing.Size(860, 335);
-            this.pnl_Menu1.TabIndex = 3;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
-            this.tableLayoutPanel1.Controls.Add(this.btn_Guardar, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btn_GuardarCambio, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btn_Volver, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 273);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(860, 62);
-            this.tableLayoutPanel1.TabIndex = 3;
-            // 
-            // btn_Volver
-            // 
-            this.btn_Volver.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Volver.FlatAppearance.BorderSize = 4;
-            this.btn_Volver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btn_Volver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_Volver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Volver.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Volver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_Volver.Location = new System.Drawing.Point(3, 3);
-            this.btn_Volver.Name = "btn_Volver";
-            this.btn_Volver.Size = new System.Drawing.Size(244, 56);
-            this.btn_Volver.TabIndex = 0;
-            this.btn_Volver.Text = "Volver";
-            this.btn_Volver.UseVisualStyleBackColor = true;
-            // 
-            // btn_GuardarCambio
-            // 
-            this.btn_GuardarCambio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_GuardarCambio.FlatAppearance.BorderSize = 4;
-            this.btn_GuardarCambio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
-            this.btn_GuardarCambio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btn_GuardarCambio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_GuardarCambio.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_GuardarCambio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_GuardarCambio.Location = new System.Drawing.Point(308, 3);
-            this.btn_GuardarCambio.Name = "btn_GuardarCambio";
-            this.btn_GuardarCambio.Size = new System.Drawing.Size(244, 56);
-            this.btn_GuardarCambio.TabIndex = 2;
-            this.btn_GuardarCambio.Text = "Guardar Cambios";
-            this.btn_GuardarCambio.UseVisualStyleBackColor = true;
-            // 
-            // btn_Guardar
-            // 
-            this.btn_Guardar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Guardar.FlatAppearance.BorderSize = 4;
-            this.btn_Guardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
-            this.btn_Guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btn_Guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Guardar.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Guardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btn_Guardar.Location = new System.Drawing.Point(613, 3);
-            this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(244, 56);
-            this.btn_Guardar.TabIndex = 5;
-            this.btn_Guardar.Text = "Guardar Nuevo";
-            this.btn_Guardar.UseVisualStyleBackColor = true;
-            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
-            // 
-            // pnl_Menu2
-            // 
-            this.pnl_Menu2.Controls.Add(this.pnl_Menu1);
-            this.pnl_Menu2.Location = new System.Drawing.Point(228, 180);
-            this.pnl_Menu2.Name = "pnl_Menu2";
-            this.pnl_Menu2.Size = new System.Drawing.Size(932, 473);
-            this.pnl_Menu2.TabIndex = 4;
-            // 
-            // pic_Foto
-            // 
-            this.pic_Foto.BackColor = System.Drawing.Color.Transparent;
-            this.pic_Foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pic_Foto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pic_Foto.Image = global::CRUD_BIS.Properties.Resources.Foto_Aqui_2;
-            this.pic_Foto.Location = new System.Drawing.Point(672, 43);
-            this.pic_Foto.Name = "pic_Foto";
-            this.pic_Foto.Size = new System.Drawing.Size(149, 144);
-            this.pic_Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Foto.TabIndex = 7;
-            this.pic_Foto.TabStop = false;
-            this.pic_Foto.Click += new System.EventHandler(this.pic_Foto_Click);
             // 
             // btn_Buscar
             // 
@@ -409,6 +174,37 @@
             this.btn_Agregar.UseVisualStyleBackColor = false;
             this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
+            // lbl_Titulo
+            // 
+            this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Titulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_Titulo.Font = new System.Drawing.Font("Consolas", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Titulo.Location = new System.Drawing.Point(200, 0);
+            this.lbl_Titulo.Name = "lbl_Titulo";
+            this.lbl_Titulo.Size = new System.Drawing.Size(783, 107);
+            this.lbl_Titulo.TabIndex = 1;
+            this.lbl_Titulo.Text = "VER USUARIO";
+            this.lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(983, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 152);
+            this.panel2.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 100);
+            this.panel4.TabIndex = 1;
+            // 
             // button1
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -437,6 +233,213 @@
             this.pic_Logo.TabIndex = 0;
             this.pic_Logo.TabStop = false;
             // 
+            // DGV_Listado
+            // 
+            this.DGV_Listado.AllowUserToAddRows = false;
+            this.DGV_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Listado.Location = new System.Drawing.Point(12, 190);
+            this.DGV_Listado.MultiSelect = false;
+            this.DGV_Listado.Name = "DGV_Listado";
+            this.DGV_Listado.RowTemplate.Height = 24;
+            this.DGV_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_Listado.Size = new System.Drawing.Size(188, 239);
+            this.DGV_Listado.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.pic_Foto);
+            this.panel5.Controls.Add(this.panel8);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(860, 273);
+            this.panel5.TabIndex = 2;
+            // 
+            // pic_Foto
+            // 
+            this.pic_Foto.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pic_Foto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_Foto.Image = global::CRUD_BIS.Properties.Resources.Foto_Aqui_2;
+            this.pic_Foto.Location = new System.Drawing.Point(672, 43);
+            this.pic_Foto.Name = "pic_Foto";
+            this.pic_Foto.Size = new System.Drawing.Size(149, 144);
+            this.pic_Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Foto.TabIndex = 7;
+            this.pic_Foto.TabStop = false;
+            this.pic_Foto.Click += new System.EventHandler(this.pic_Foto_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.pnl_Pass);
+            this.panel8.Controls.Add(this.txt_Pass);
+            this.panel8.Controls.Add(this.lbl_Pass);
+            this.panel8.Location = new System.Drawing.Point(17, 137);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(613, 50);
+            this.panel8.TabIndex = 6;
+            // 
+            // pnl_Pass
+            // 
+            this.pnl_Pass.BackColor = System.Drawing.Color.White;
+            this.pnl_Pass.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Pass.Location = new System.Drawing.Point(190, 47);
+            this.pnl_Pass.Margin = new System.Windows.Forms.Padding(0);
+            this.pnl_Pass.Name = "pnl_Pass";
+            this.pnl_Pass.Size = new System.Drawing.Size(423, 3);
+            this.pnl_Pass.TabIndex = 3;
+            // 
+            // txt_Pass
+            // 
+            this.txt_Pass.BackColor = System.Drawing.Color.Black;
+            this.txt_Pass.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txt_Pass.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Pass.ForeColor = System.Drawing.Color.White;
+            this.txt_Pass.Location = new System.Drawing.Point(190, 0);
+            this.txt_Pass.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_Pass.Name = "txt_Pass";
+            this.txt_Pass.Size = new System.Drawing.Size(423, 47);
+            this.txt_Pass.TabIndex = 4;
+            // 
+            // lbl_Pass
+            // 
+            this.lbl_Pass.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbl_Pass.Location = new System.Drawing.Point(0, 0);
+            this.lbl_Pass.Name = "lbl_Pass";
+            this.lbl_Pass.Size = new System.Drawing.Size(190, 50);
+            this.lbl_Pass.TabIndex = 5;
+            this.lbl_Pass.Text = "Contraseña:";
+            this.lbl_Pass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.pnl_Nombre);
+            this.panel6.Controls.Add(this.txt_Nombre);
+            this.panel6.Controls.Add(this.lbl_Nombre);
+            this.panel6.Location = new System.Drawing.Point(17, 44);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(613, 50);
+            this.panel6.TabIndex = 5;
+            // 
+            // pnl_Nombre
+            // 
+            this.pnl_Nombre.BackColor = System.Drawing.Color.White;
+            this.pnl_Nombre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Nombre.Location = new System.Drawing.Point(190, 47);
+            this.pnl_Nombre.Margin = new System.Windows.Forms.Padding(0);
+            this.pnl_Nombre.Name = "pnl_Nombre";
+            this.pnl_Nombre.Size = new System.Drawing.Size(423, 3);
+            this.pnl_Nombre.TabIndex = 3;
+            // 
+            // txt_Nombre
+            // 
+            this.txt_Nombre.BackColor = System.Drawing.Color.Black;
+            this.txt_Nombre.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txt_Nombre.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Nombre.ForeColor = System.Drawing.Color.White;
+            this.txt_Nombre.Location = new System.Drawing.Point(190, 0);
+            this.txt_Nombre.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_Nombre.Name = "txt_Nombre";
+            this.txt_Nombre.Size = new System.Drawing.Size(423, 47);
+            this.txt_Nombre.TabIndex = 4;
+            // 
+            // lbl_Nombre
+            // 
+            this.lbl_Nombre.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lbl_Nombre.Location = new System.Drawing.Point(0, 0);
+            this.lbl_Nombre.Name = "lbl_Nombre";
+            this.lbl_Nombre.Size = new System.Drawing.Size(190, 50);
+            this.lbl_Nombre.TabIndex = 5;
+            this.lbl_Nombre.Text = "Nombre:";
+            this.lbl_Nombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pnl_Menu1
+            // 
+            this.pnl_Menu1.Controls.Add(this.tableLayoutPanel1);
+            this.pnl_Menu1.Controls.Add(this.panel5);
+            this.pnl_Menu1.Location = new System.Drawing.Point(30, 43);
+            this.pnl_Menu1.Name = "pnl_Menu1";
+            this.pnl_Menu1.Size = new System.Drawing.Size(860, 335);
+            this.pnl_Menu1.TabIndex = 3;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
+            this.tableLayoutPanel1.Controls.Add(this.btn_Guardar, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_GuardarCambio, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btn_Volver, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 273);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(860, 62);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // btn_Guardar
+            // 
+            this.btn_Guardar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Guardar.FlatAppearance.BorderSize = 4;
+            this.btn_Guardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
+            this.btn_Guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btn_Guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Guardar.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Guardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_Guardar.Location = new System.Drawing.Point(613, 3);
+            this.btn_Guardar.Name = "btn_Guardar";
+            this.btn_Guardar.Size = new System.Drawing.Size(244, 56);
+            this.btn_Guardar.TabIndex = 5;
+            this.btn_Guardar.Text = "Guardar Nuevo";
+            this.btn_Guardar.UseVisualStyleBackColor = true;
+            this.btn_Guardar.Click += new System.EventHandler(this.btn_Guardar_Click);
+            // 
+            // btn_GuardarCambio
+            // 
+            this.btn_GuardarCambio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_GuardarCambio.FlatAppearance.BorderSize = 4;
+            this.btn_GuardarCambio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGreen;
+            this.btn_GuardarCambio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btn_GuardarCambio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_GuardarCambio.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_GuardarCambio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_GuardarCambio.Location = new System.Drawing.Point(308, 3);
+            this.btn_GuardarCambio.Name = "btn_GuardarCambio";
+            this.btn_GuardarCambio.Size = new System.Drawing.Size(244, 56);
+            this.btn_GuardarCambio.TabIndex = 2;
+            this.btn_GuardarCambio.Text = "Guardar Cambios";
+            this.btn_GuardarCambio.UseVisualStyleBackColor = true;
+            // 
+            // btn_Volver
+            // 
+            this.btn_Volver.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_Volver.FlatAppearance.BorderSize = 4;
+            this.btn_Volver.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.btn_Volver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Volver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Volver.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Volver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_Volver.Location = new System.Drawing.Point(3, 3);
+            this.btn_Volver.Name = "btn_Volver";
+            this.btn_Volver.Size = new System.Drawing.Size(244, 56);
+            this.btn_Volver.TabIndex = 0;
+            this.btn_Volver.Text = "Volver";
+            this.btn_Volver.UseVisualStyleBackColor = true;
+            // 
+            // pnl_Menu2
+            // 
+            this.pnl_Menu2.Controls.Add(this.pnl_Menu1);
+            this.pnl_Menu2.Location = new System.Drawing.Point(228, 180);
+            this.pnl_Menu2.Name = "pnl_Menu2";
+            this.pnl_Menu2.Size = new System.Drawing.Size(932, 473);
+            this.pnl_Menu2.TabIndex = 4;
+            // 
             // OFD_Foto
             // 
             this.OFD_Foto.FileName = "openFileDialog1";
@@ -448,7 +451,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1183, 734);
             this.Controls.Add(this.pnl_Menu2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGV_Listado);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
@@ -463,17 +466,17 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Listado)).EndInit();
             this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Foto)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.pnl_Menu1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.pnl_Menu2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Foto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -482,7 +485,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pic_Logo;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_Titulo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnl_Buscar;
         private System.Windows.Forms.Panel panel3;
@@ -492,7 +495,7 @@
         private System.Windows.Forms.Button btn_Agregar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGV_Listado;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel pnl_Nombre;
