@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CRUD_BIS.PRESENTACION
 {
@@ -16,6 +17,8 @@ namespace CRUD_BIS.PRESENTACION
         {
             InitializeComponent();
         }
+
+        int ID_Usuario;
 
         private void FORM_USUARIO_Load(object sender, EventArgs e)
         {
@@ -33,6 +36,21 @@ namespace CRUD_BIS.PRESENTACION
         private void txt_Buscar_TextChanged(object sender, EventArgs e)
         {
 
+            Buscar_Usuario();
+
+        }
+
+        private void Buscar_Usuario()
+        {
+
+            DataTable Dt;
+
+            CRUD_BIS.DATOS.DATOS_USUARIO Duser = new CRUD_BIS.DATOS.DATOS_USUARIO();
+
+            Dt = Duser.Buscar_Usuario(this.txt_Buscar.Text);
+
+            this.DGV_Listado.DataSource = Dt;
+
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
@@ -43,6 +61,10 @@ namespace CRUD_BIS.PRESENTACION
             this.lbl_Titulo.Text = "AGREGAR USUARIO";
 
             this.tableLayoutPanel1.Controls.Remove(this.btn_GuardarCambio);
+
+            this.tableLayoutPanel1.Controls.Add(this.btn_Guardar, 4, 0);
+
+            this.pic_Foto.Image = CRUD_BIS.Properties.Resources.Foto_Aqui_2;
 
             this.txt_Nombre.Clear();
 
@@ -166,6 +188,126 @@ namespace CRUD_BIS.PRESENTACION
             this.DGV_Listado.DataSource = Dt;
 
         }
+
+        private void Eliminar_Usuario()
+        {
+
+            CRUD_BIS.LOGICA.LOGICA_USUARIO Dt = new CRUD_BIS.LOGICA.LOGICA_USUARIO();
+
+            CRUD_BIS.DATOS.DATOS_USUARIO Duser = new CRUD_BIS.DATOS.DATOS_USUARIO();
+
+            Dt.ID_Usuario_3 = ID_Usuario;
+
+            if (Duser.Eliminar_Usuario(Dt) == true)
+            {
+
+                MessageBox.Show("Usuario Eliminado", "Eliminacion Correcta...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+        }
+
+        private void DGV_Listado_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            ID_Usuario = Convert.ToInt32(this.DGV_Listado.SelectedCells[2].Value.ToString());
+
+            if (e.ColumnIndex == this.DGV_Listado.Columns["Borrar"].Index)
+            {
+
+                DialogResult Resp;
+
+                Resp = MessageBox.Show("¿Desea eliminar este registro?", "Eliminado registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if(Resp == DialogResult.OK)
+                {
+
+                    Eliminar_Usuario();
+
+                    Mostrar_Usuario();
+
+                }
+
+            }
+
+                if (e.ColumnIndex == this.DGV_Listado.Columns["Editar"].Index)
+            {
+                
+                this.txt_Nombre.Text = this.DGV_Listado.SelectedCells[3].Value.ToString();
+
+                this.txt_Pass.Text = this.DGV_Listado.SelectedCells[4].Value.ToString();
+
+                this.pic_Foto.BackgroundImage = null;
+
+                byte[] b = (byte[])this.DGV_Listado.SelectedCells[5].Value;
+
+                MemoryStream Ms = new MemoryStream(b);
+
+                this.pic_Foto.Image = Image.FromStream(Ms);
+
+
+                this.pnl_Menu2.Visible = true;
+
+                this.lbl_Titulo.Text = "MODIFICAR USUARIO";
+
+                this.tableLayoutPanel1.Controls.Remove(this.btn_Guardar);
+
+                this.tableLayoutPanel1.Controls.Add(this.btn_GuardarCambio, 4, 0);
+
+            }
+
+        }
+
+        private void btn_Volver_Click(object sender, EventArgs e)
+        {
+
+            this.pnl_Menu2.Visible = false;
+
+            this.lbl_Titulo.Text = "VER USUARIO";
+
+            this.pic_Foto.Image = CRUD_BIS.Properties.Resources.Foto_Aqui_2;
+
+        }
+
+        private void btn_GuardarCambio_Click(object sender, EventArgs e)
+        {
+
+            Editar_Usuario();
+
+            Mostrar_Usuario();
+
+        }
+
+        private void Editar_Usuario()
+        {
+
+            CRUD_BIS.LOGICA.LOGICA_USUARIO Dt = new CRUD_BIS.LOGICA.LOGICA_USUARIO();
+
+            CRUD_BIS.DATOS.DATOS_USUARIO Duser = new CRUD_BIS.DATOS.DATOS_USUARIO();
+
+            Dt.ID_Usuario_3 = ID_Usuario;
+
+            Dt.Nombre_3 = this.txt_Nombre.Text;
+
+            Dt.Pass_3 = this.txt_Pass.Text;
+
+            System.IO.MemoryStream Ms = new System.IO.MemoryStream();
+
+            this.pic_Foto.Image.Save(Ms, this.pic_Foto.Image.RawFormat);
+
+            Dt.Icono_3 = Ms.GetBuffer();
+
+            Dt.Estado_3 = "ACTIVO";
+
+            if (Duser.Editar_Usuario(Dt) == true)
+            {
+
+                MessageBox.Show("Usuario Modificado", "Registro Correcto...", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+        }
+
 
     }
 }

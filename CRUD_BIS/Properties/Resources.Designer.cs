@@ -103,6 +103,16 @@ namespace CRUD_BIS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lapiz {
+            get {
+                object obj = ResourceManager.GetObject("lapiz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_BIS___Copy11 {
             get {
                 object obj = ResourceManager.GetObject("Logo BIS - Copy11", resourceCulture);

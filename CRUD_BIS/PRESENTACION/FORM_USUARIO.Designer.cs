@@ -33,17 +33,11 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnl_Buscar = new System.Windows.Forms.Panel();
             this.txt_Buscar = new System.Windows.Forms.TextBox();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.btn_Borrar = new System.Windows.Forms.Button();
-            this.btn_Agregar = new System.Windows.Forms.Button();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pic_Logo = new System.Windows.Forms.PictureBox();
             this.DGV_Listado = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pic_Foto = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pnl_Pass = new System.Windows.Forms.Panel();
             this.txt_Pass = new System.Windows.Forms.TextBox();
@@ -59,19 +53,29 @@
             this.btn_Volver = new System.Windows.Forms.Button();
             this.pnl_Menu2 = new System.Windows.Forms.Panel();
             this.OFD_Foto = new System.Windows.Forms.OpenFileDialog();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pic_Foto = new System.Windows.Forms.PictureBox();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.btn_Borrar = new System.Windows.Forms.Button();
+            this.btn_Agregar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pic_Logo = new System.Windows.Forms.PictureBox();
+            this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Listado)).BeginInit();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Foto)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.pnl_Menu1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnl_Menu2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Foto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -123,57 +127,6 @@
             this.txt_Buscar.TabIndex = 4;
             this.txt_Buscar.TextChanged += new System.EventHandler(this.txt_Buscar_TextChanged);
             // 
-            // btn_Buscar
-            // 
-            this.btn_Buscar.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Buscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Buscar.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_Buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_Buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Buscar.Image = global::CRUD_BIS.Properties.Resources.buscar_2;
-            this.btn_Buscar.Location = new System.Drawing.Point(609, 0);
-            this.btn_Buscar.Name = "btn_Buscar";
-            this.btn_Buscar.Size = new System.Drawing.Size(58, 45);
-            this.btn_Buscar.TabIndex = 5;
-            this.btn_Buscar.UseVisualStyleBackColor = false;
-            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
-            // 
-            // btn_Borrar
-            // 
-            this.btn_Borrar.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Borrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Borrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Borrar.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_Borrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_Borrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Borrar.Image = global::CRUD_BIS.Properties.Resources.borrador;
-            this.btn_Borrar.Location = new System.Drawing.Point(667, 0);
-            this.btn_Borrar.Name = "btn_Borrar";
-            this.btn_Borrar.Size = new System.Drawing.Size(58, 45);
-            this.btn_Borrar.TabIndex = 6;
-            this.btn_Borrar.UseVisualStyleBackColor = false;
-            this.btn_Borrar.Click += new System.EventHandler(this.btn_Borrar_Click);
-            // 
-            // btn_Agregar
-            // 
-            this.btn_Agregar.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Agregar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_Agregar.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_Agregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btn_Agregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
-            this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Agregar.Image = global::CRUD_BIS.Properties.Resources.mas_2;
-            this.btn_Agregar.Location = new System.Drawing.Point(725, 0);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(58, 45);
-            this.btn_Agregar.TabIndex = 7;
-            this.btn_Agregar.UseVisualStyleBackColor = false;
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
-            // 
             // lbl_Titulo
             // 
             this.lbl_Titulo.BackColor = System.Drawing.Color.Transparent;
@@ -205,45 +158,22 @@
             this.panel4.Size = new System.Drawing.Size(200, 100);
             this.panel4.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::CRUD_BIS.Properties.Resources.cancelar;
-            this.button1.Location = new System.Drawing.Point(100, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 100);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // pic_Logo
-            // 
-            this.pic_Logo.BackColor = System.Drawing.Color.Transparent;
-            this.pic_Logo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pic_Logo.Image = global::CRUD_BIS.Properties.Resources.Logo_BIS___Copy11;
-            this.pic_Logo.InitialImage = null;
-            this.pic_Logo.Location = new System.Drawing.Point(0, 0);
-            this.pic_Logo.Name = "pic_Logo";
-            this.pic_Logo.Size = new System.Drawing.Size(200, 152);
-            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Logo.TabIndex = 0;
-            this.pic_Logo.TabStop = false;
-            // 
             // DGV_Listado
             // 
             this.DGV_Listado.AllowUserToAddRows = false;
             this.DGV_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Listado.Location = new System.Drawing.Point(12, 190);
+            this.DGV_Listado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Borrar,
+            this.Editar});
+            this.DGV_Listado.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.DGV_Listado.Location = new System.Drawing.Point(31, 183);
             this.DGV_Listado.MultiSelect = false;
             this.DGV_Listado.Name = "DGV_Listado";
             this.DGV_Listado.RowTemplate.Height = 24;
             this.DGV_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV_Listado.Size = new System.Drawing.Size(188, 239);
+            this.DGV_Listado.Size = new System.Drawing.Size(281, 239);
             this.DGV_Listado.TabIndex = 1;
+            this.DGV_Listado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Listado_CellClick);
             // 
             // panel5
             // 
@@ -255,20 +185,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(860, 273);
             this.panel5.TabIndex = 2;
-            // 
-            // pic_Foto
-            // 
-            this.pic_Foto.BackColor = System.Drawing.Color.Transparent;
-            this.pic_Foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pic_Foto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pic_Foto.Image = global::CRUD_BIS.Properties.Resources.Foto_Aqui_2;
-            this.pic_Foto.Location = new System.Drawing.Point(672, 43);
-            this.pic_Foto.Name = "pic_Foto";
-            this.pic_Foto.Size = new System.Drawing.Size(149, 144);
-            this.pic_Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_Foto.TabIndex = 7;
-            this.pic_Foto.TabStop = false;
-            this.pic_Foto.Click += new System.EventHandler(this.pic_Foto_Click);
             // 
             // panel8
             // 
@@ -415,6 +331,7 @@
             this.btn_GuardarCambio.TabIndex = 2;
             this.btn_GuardarCambio.Text = "Guardar Cambios";
             this.btn_GuardarCambio.UseVisualStyleBackColor = true;
+            this.btn_GuardarCambio.Click += new System.EventHandler(this.btn_GuardarCambio_Click);
             // 
             // btn_Volver
             // 
@@ -431,6 +348,7 @@
             this.btn_Volver.TabIndex = 0;
             this.btn_Volver.Text = "Volver";
             this.btn_Volver.UseVisualStyleBackColor = true;
+            this.btn_Volver.Click += new System.EventHandler(this.btn_Volver_Click);
             // 
             // pnl_Menu2
             // 
@@ -443,6 +361,127 @@
             // OFD_Foto
             // 
             this.OFD_Foto.FileName = "openFileDialog1";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Editar";
+            this.dataGridViewImageColumn1.Image = global::CRUD_BIS.Properties.Resources.lapiz;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Borrar";
+            this.dataGridViewImageColumn2.Image = global::CRUD_BIS.Properties.Resources.cancelar;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            // 
+            // pic_Foto
+            // 
+            this.pic_Foto.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pic_Foto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic_Foto.Image = global::CRUD_BIS.Properties.Resources.Foto_Aqui_2;
+            this.pic_Foto.Location = new System.Drawing.Point(672, 43);
+            this.pic_Foto.Name = "pic_Foto";
+            this.pic_Foto.Size = new System.Drawing.Size(149, 144);
+            this.pic_Foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Foto.TabIndex = 7;
+            this.pic_Foto.TabStop = false;
+            this.pic_Foto.Click += new System.EventHandler(this.pic_Foto_Click);
+            // 
+            // btn_Buscar
+            // 
+            this.btn_Buscar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Buscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Buscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_Buscar.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_Buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Buscar.Image = global::CRUD_BIS.Properties.Resources.buscar_2;
+            this.btn_Buscar.Location = new System.Drawing.Point(609, 0);
+            this.btn_Buscar.Name = "btn_Buscar";
+            this.btn_Buscar.Size = new System.Drawing.Size(58, 45);
+            this.btn_Buscar.TabIndex = 5;
+            this.btn_Buscar.UseVisualStyleBackColor = false;
+            this.btn_Buscar.Click += new System.EventHandler(this.btn_Buscar_Click);
+            // 
+            // btn_Borrar
+            // 
+            this.btn_Borrar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Borrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Borrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_Borrar.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Borrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_Borrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Borrar.Image = global::CRUD_BIS.Properties.Resources.borrador;
+            this.btn_Borrar.Location = new System.Drawing.Point(667, 0);
+            this.btn_Borrar.Name = "btn_Borrar";
+            this.btn_Borrar.Size = new System.Drawing.Size(58, 45);
+            this.btn_Borrar.TabIndex = 6;
+            this.btn_Borrar.UseVisualStyleBackColor = false;
+            this.btn_Borrar.Click += new System.EventHandler(this.btn_Borrar_Click);
+            // 
+            // btn_Agregar
+            // 
+            this.btn_Agregar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Agregar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_Agregar.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btn_Agregar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btn_Agregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
+            this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Agregar.Image = global::CRUD_BIS.Properties.Resources.mas_2;
+            this.btn_Agregar.Location = new System.Drawing.Point(725, 0);
+            this.btn_Agregar.Name = "btn_Agregar";
+            this.btn_Agregar.Size = new System.Drawing.Size(58, 45);
+            this.btn_Agregar.TabIndex = 7;
+            this.btn_Agregar.UseVisualStyleBackColor = false;
+            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::CRUD_BIS.Properties.Resources.cancelar;
+            this.button1.Location = new System.Drawing.Point(100, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 100);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // pic_Logo
+            // 
+            this.pic_Logo.BackColor = System.Drawing.Color.Transparent;
+            this.pic_Logo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pic_Logo.Image = global::CRUD_BIS.Properties.Resources.Logo_BIS___Copy11;
+            this.pic_Logo.InitialImage = null;
+            this.pic_Logo.Location = new System.Drawing.Point(0, 0);
+            this.pic_Logo.Name = "pic_Logo";
+            this.pic_Logo.Size = new System.Drawing.Size(200, 152);
+            this.pic_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_Logo.TabIndex = 0;
+            this.pic_Logo.TabStop = false;
+            // 
+            // Borrar
+            // 
+            this.Borrar.HeaderText = "Borrar";
+            this.Borrar.Image = global::CRUD_BIS.Properties.Resources.cancelar;
+            this.Borrar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Borrar.Name = "Borrar";
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::CRUD_BIS.Properties.Resources.lapiz;
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.Name = "Editar";
             // 
             // FORM_USUARIO
             // 
@@ -466,10 +505,8 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Listado)).EndInit();
             this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Foto)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -477,6 +514,8 @@
             this.pnl_Menu1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.pnl_Menu2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Foto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -513,5 +552,9 @@
         private System.Windows.Forms.Button btn_Volver;
         private System.Windows.Forms.Panel pnl_Menu2;
         private System.Windows.Forms.OpenFileDialog OFD_Foto;
+        private System.Windows.Forms.DataGridViewImageColumn Borrar;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
     }
 }

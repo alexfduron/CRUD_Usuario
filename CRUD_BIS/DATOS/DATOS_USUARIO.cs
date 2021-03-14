@@ -72,6 +72,60 @@ namespace CRUD_BIS.DATOS
 
         }
 
+        //aqui tenemos parametros de entrada, por lo que se llama a la capa de Logica
+        public bool Editar_Usuario(CRUD_BIS.LOGICA.LOGICA_USUARIO Dt)
+        {
+
+            try
+            {
+
+                CRUD_BIS.DATOS.DATOS_CONEXION.ABRIR();
+
+                Cmd = new SqlCommand("Editar_Usuario", CRUD_BIS.DATOS.DATOS_CONEXION.CONEXION);
+
+                Cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                Cmd.Parameters.AddWithValue("@ID_Usuario", Dt.ID_Usuario_3);
+
+                Cmd.Parameters.AddWithValue("@Nombre", Dt.Nombre_3);
+
+                Cmd.Parameters.AddWithValue("@Pass", Dt.Pass_3);
+
+                Cmd.Parameters.AddWithValue("@Imagen", Dt.Icono_3);
+
+                Cmd.Parameters.AddWithValue("@Estado", Dt.Estado_3);
+
+                if (Cmd.ExecuteNonQuery() != 0)
+                {
+
+                    return true;
+
+                }
+                else
+                {
+
+                    return false;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+
+                return false;
+
+            }
+            finally
+            {
+
+                CRUD_BIS.DATOS.DATOS_CONEXION.CERRAR();
+
+            }
+
+        }
+
         //aqui no tenemos parametros de entrada
         public DataTable Mostrar_Usuario()
         {
@@ -103,6 +157,103 @@ namespace CRUD_BIS.DATOS
 
             }
             catch(Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+
+                return null;
+
+            }
+            finally
+            {
+
+                CRUD_BIS.DATOS.DATOS_CONEXION.CERRAR();
+
+            }
+
+        }
+
+        public bool Eliminar_Usuario(CRUD_BIS.LOGICA.LOGICA_USUARIO Dt)
+        {
+
+            try
+            {
+
+                CRUD_BIS.DATOS.DATOS_CONEXION.ABRIR();
+
+                Cmd = new SqlCommand("Eliminar_Usuario", CRUD_BIS.DATOS.DATOS_CONEXION.CONEXION);
+
+                Cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                Cmd.Parameters.AddWithValue("@ID_Usuario", Dt.ID_Usuario_3);
+                
+                if (Cmd.ExecuteNonQuery() != 0)
+                {
+
+                    return true;
+
+                }
+                else
+                {
+
+                    return false;
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+
+                return false;
+
+            }
+            finally
+            {
+
+                CRUD_BIS.DATOS.DATOS_CONEXION.CERRAR();
+
+            }
+
+        }
+
+        //aqui tenemos parametros de entrada, por lo que se llama a la capa de Logica
+        public DataTable Buscar_Usuario(String xTexto)
+        {
+
+            try
+            {
+
+                CRUD_BIS.DATOS.DATOS_CONEXION.ABRIR();
+
+                Cmd = new SqlCommand("Buscar_Usuario", CRUD_BIS.DATOS.DATOS_CONEXION.CONEXION);
+
+                Cmd.CommandType = CommandType.StoredProcedure;
+
+                Cmd.Parameters.AddWithValue("@Buscador", xTexto); 
+
+                if (Cmd.ExecuteNonQuery() != 0)
+                {
+
+                    DataTable Dt = new DataTable();
+
+                    SqlDataAdapter Da = new SqlDataAdapter(Cmd);
+
+                    Da.Fill(Dt);
+
+                    return Dt;
+
+                }
+                else
+                {
+
+                    return null;
+
+                }
+
+            }
+            catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
