@@ -29,6 +29,8 @@ namespace CRUD_BIS.PRESENTACION
 
             this.DGV_Listado.Dock = DockStyle.Fill;
 
+
+
             Mostrar_Usuario();
 
         }
@@ -51,6 +53,10 @@ namespace CRUD_BIS.PRESENTACION
 
             this.DGV_Listado.DataSource = Dt;
 
+            CRUD_BIS.LOGICA.TAM_DT Formato1 = new CRUD_BIS.LOGICA.TAM_DT();
+
+            Formato1.MultiLinea(this.DGV_Listado);
+
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
@@ -72,12 +78,14 @@ namespace CRUD_BIS.PRESENTACION
 
             this.txt_Nombre.Focus();
 
+            CRUD_BIS.LOGICA.TAM_DT Diseño = new CRUD_BIS.LOGICA.TAM_DT();
+
+            Diseño.CentrarTopControl(this.pnl_Menu1);
+
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
         {
-
-            //this.txt_Buscar.Clear();
 
             this.txt_Buscar.Focus();
 
@@ -187,6 +195,10 @@ namespace CRUD_BIS.PRESENTACION
 
             this.DGV_Listado.DataSource = Dt;
 
+            CRUD_BIS.LOGICA.TAM_DT Formato1 = new CRUD_BIS.LOGICA.TAM_DT();
+
+            Formato1.MultiLinea(this.DGV_Listado);
+
         }
 
         private void Eliminar_Usuario()
@@ -254,6 +266,10 @@ namespace CRUD_BIS.PRESENTACION
 
                 this.tableLayoutPanel1.Controls.Add(this.btn_GuardarCambio, 4, 0);
 
+                CRUD_BIS.LOGICA.TAM_DT Diseño = new CRUD_BIS.LOGICA.TAM_DT();
+
+                Diseño.CentrarTopControl(this.pnl_Menu1);
+
             }
 
         }
@@ -275,6 +291,10 @@ namespace CRUD_BIS.PRESENTACION
             Editar_Usuario();
 
             Mostrar_Usuario();
+
+            this.lbl_Titulo.Text = "VER USUARIO";
+
+            this.pnl_Menu2.Visible = false;
 
         }
 
