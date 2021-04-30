@@ -56,6 +56,12 @@
     <Compile Include="DATOS\DATOS_CONEXION.cs" />
     <Compile Include="DATOS\DATOS_USUARIO.cs" />
     <Compile Include="LOGICA\LOGICA_USUARIO.cs" />
+    <Compile Include="PRESENTACION\FORM_FIREBASE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRESENTACION\FORM_FIREBASE.Designer.cs">
+      <DependentUpon>FORM_FIREBASE.cs</DependentUpon>
+    </Compile>
     <Compile Include="PRESENTACION\FORM_USUARIO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PRESENTACION\FORM_FIREBASE.resx">
+      <DependentUpon>FORM_FIREBASE.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PRESENTACION\FORM_USUARIO.resx">
       <DependentUpon>FORM_USUARIO.cs</DependentUpon>
     </EmbeddedResource>
