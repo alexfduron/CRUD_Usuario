@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
+//hacemos referencia al archivo app.config
+using System.Configuration;
+using System.Xml;
+
 //hacemos referencia al firesharp
 //asegurarse que tenemos instalado el Firesharp en el proyecto
 using FireSharp.Config;
@@ -39,13 +43,13 @@ namespace CRUD_BIS.PRESENTACION
 
 
         //Configuramos FireSharp------------------------------
-        
+
         private FirebaseConfig FCon_ = new FirebaseConfig
         {
 
-            AuthSecret = "D0BZjLrRTq4SSPsjO5dKULbh9Eo0AQfwCMq4sX76",
+            AuthSecret = ConfigurationManager.AppSettings.Get("AuthSecret"),
 
-            BasePath = "https://vb-firebase-dbfc6-default-rtdb.firebaseio.com/"
+            BasePath = ConfigurationManager.AppSettings.Get("BasePath")
 
         };
         
@@ -764,8 +768,122 @@ namespace CRUD_BIS.PRESENTACION
 
         }
 
+        //video 49:19
+        private void Btn_ClearSelection_Click(object sender, EventArgs e)
+        {
 
+            this.DGV_UserData.ClearSelection();
 
+        }
+
+        private void Txt_Search_TextChanged(object sender, EventArgs e)
+        {
+
+            this.dtTableGrd.DefaultView.RowFilter = this.Cmb_SearchBy.Text + " Like '%" + this.Txt_Search.Text + "%'";
+
+            this.DGV_UserData.ClearSelection();
+
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.Btn_Edit_Click(sender, e);
+
+        }
+
+        private void borrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.Btn_Delete_Click(sender, e);
+
+        }
+
+        private void seleccionarTodoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.DGV_UserData.SelectAll();
+
+        }
+
+        private void limpiarTodoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.Btn_ClearSelection_Click(sender, e);
+
+        }
+
+        private void ModificarValor(string xTexto, string xCampo)
+        {
+            /*aqui obtenemos el valor
+            string Valor1 = ConfigurationManager.AppSettings.Get("TABLA");
+
+            MessageBox.Show(Valor1);
+            */
+
+            //aqui modificamos el valor
+            XmlDocument XmlDoc = new XmlDocument();
+
+            //string xDir = AppDomain.CurrentDomain.SetupInformation.ConfigurationFile.Substring(0, AppDomain.CurrentDomain.SetupInformation.ConfigurationFile.ToString().IndexOf("bin")) + "app.config";
+            string xDir = Application.ExecutablePath.Substring(0, Application.ExecutablePath.ToString().IndexOf("bin")) + "app.config";
+
+            if (System.IO.File.Exists(xDir) == false)
+            {
+                
+                cfgSetValue("configuration/appSettings", "AuthSecret", "Unknow");
+                cfgSetValue("configuration/appSettings", "BasePath", "Unknow");
+                cfgSetValue("configuration/appSettings", "TABLA", "Unknow");
+
+                XmlDoc.Save(xDir);
+
+            }
+
+            XmlDoc.Load(xDir);
+
+            foreach (XmlElement Elemento in XmlDoc.DocumentElement)
+            {
+
+                if (Elemento.Name.Equals("appSettings"))
+                {
+
+                    foreach (XmlNode Nodo in Elemento.ChildNodes)
+                    {
+
+                        //Attributes[0] es igual al Key
+                        //Attributes[1] es igual al value
+                        if (Nodo.Attributes[0].Value == xCampo)
+                        {
+
+                            Nodo.Attributes[1].Value = xTexto;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            XmlDoc.Save(xDir);
+
+            ConfigurationManager.RefreshSection("appSettings");
+
+        }
+
+        //  El método para guardar los valores
+        private void cfgSetValue(string seccion, string clave, string valor)
+        {
+            //
+            XmlDocument configXml = new XmlDocument();
+            //
+
+            XmlNode n;
+            n = configXml.SelectSingleNode(seccion + "/add[@key=\"" + clave + "\"]");
+            if (n != null)
+            {
+                n.Attributes["value"].InnerText = valor;
+            }
+        }
 
     }
 }
