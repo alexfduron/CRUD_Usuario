@@ -113,7 +113,14 @@ namespace CRUD_BIS.LOGICA
                 Lista.Rows[k].Height = 50;
             }
 
-
+            for (int j = 0; j < Lista.Columns.Count; j++)
+            {
+                if (Lista.Columns[j] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)Lista.Columns[j]).ImageLayout = DataGridViewImageCellLayout.Zoom;
+                    continue;
+                }
+            }
 
             Lista.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 
