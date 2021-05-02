@@ -122,6 +122,10 @@ namespace CRUD_BIS.LOGICA
                 }
             }
 
+
+            Lista.RowHeadersVisible = false;
+
+
             Lista.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
 
             Lista.ColumnHeadersHeight = 50;
