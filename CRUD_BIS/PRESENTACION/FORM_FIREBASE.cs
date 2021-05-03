@@ -885,5 +885,26 @@ namespace CRUD_BIS.PRESENTACION
             }
         }
 
+        private void PB_UserReg_Click(object sender, EventArgs e)
+        {
+
+            this.OFD_UserImage.InitialDirectory = "";
+
+            this.OFD_UserImage.Filter = "Imagenes|*.jpg;*.png;*.bmp";
+
+            this.OFD_UserImage.FilterIndex = 3;
+
+            this.OFD_UserImage.Title = "Cargador de Imagenes...";
+
+            if (this.OFD_UserImage.ShowDialog() == DialogResult.OK)
+            {
+
+                this.PB_UserReg.BackgroundImage = null;
+
+                this.PB_UserReg.Image = new Bitmap(this.OFD_UserImage.FileName);
+
+            }
+
+        }
     }
 }

@@ -64,11 +64,17 @@
             this.Genero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Imagen = new System.Windows.Forms.DataGridViewImageColumn();
+            this.CMS_UserDataTable = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.seleccionarTodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.limpiarTodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Lbl_TotalUser = new System.Windows.Forms.Label();
-            this.Btn_ClearSelection = new System.Windows.Forms.Button();
             this.Btn_Refresh = new System.Windows.Forms.Button();
+            this.Btn_ClearSelection = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
             this.Btn_Edit = new System.Windows.Forms.Button();
             this.Cmb_SearchBy = new System.Windows.Forms.ComboBox();
@@ -78,12 +84,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.Lbl_RecordView = new System.Windows.Forms.Label();
             this.Pnl_MargenInferior = new System.Windows.Forms.Panel();
-            this.CMS_UserDataTable = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.seleccionarTodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.limpiarTodoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Pnl_Header1.SuspendLayout();
             this.Pnl_Header4.SuspendLayout();
             this.Pnl_Header3.SuspendLayout();
@@ -92,10 +92,10 @@
             this.Pnl_Header2.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_UserData)).BeginInit();
+            this.CMS_UserDataTable.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.CMS_UserDataTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pnl_margen_Sup
@@ -173,6 +173,7 @@
             this.PB_UserReg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PB_UserReg.TabIndex = 12;
             this.PB_UserReg.TabStop = false;
+            this.PB_UserReg.Click += new System.EventHandler(this.PB_UserReg_Click);
             // 
             // Btn_ClearAll
             // 
@@ -376,7 +377,7 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(177)))), ((int)(((byte)(179)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -427,6 +428,51 @@
             this.Imagen.Name = "Imagen";
             this.Imagen.ReadOnly = true;
             // 
+            // CMS_UserDataTable
+            // 
+            this.CMS_UserDataTable.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.CMS_UserDataTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editarToolStripMenuItem,
+            this.borrarToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.seleccionarTodoToolStripMenuItem,
+            this.limpiarTodoToolStripMenuItem});
+            this.CMS_UserDataTable.Name = "CMS_UserDataTable";
+            this.CMS_UserDataTable.Size = new System.Drawing.Size(193, 106);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.editarToolStripMenuItem.Text = "Editar";
+            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
+            // 
+            // borrarToolStripMenuItem
+            // 
+            this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.borrarToolStripMenuItem.Text = "Borrar";
+            this.borrarToolStripMenuItem.Click += new System.EventHandler(this.borrarToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(189, 6);
+            // 
+            // seleccionarTodoToolStripMenuItem
+            // 
+            this.seleccionarTodoToolStripMenuItem.Name = "seleccionarTodoToolStripMenuItem";
+            this.seleccionarTodoToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.seleccionarTodoToolStripMenuItem.Text = "Seleccionar Todo";
+            this.seleccionarTodoToolStripMenuItem.Click += new System.EventHandler(this.seleccionarTodoToolStripMenuItem_Click);
+            // 
+            // limpiarTodoToolStripMenuItem
+            // 
+            this.limpiarTodoToolStripMenuItem.Name = "limpiarTodoToolStripMenuItem";
+            this.limpiarTodoToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.limpiarTodoToolStripMenuItem.Text = "Limpiar Todo";
+            this.limpiarTodoToolStripMenuItem.Click += new System.EventHandler(this.limpiarTodoToolStripMenuItem_Click);
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.panel4);
@@ -461,17 +507,6 @@
             this.Lbl_TotalUser.Text = "Total Usuarios: ";
             this.Lbl_TotalUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Btn_ClearSelection
-            // 
-            this.Btn_ClearSelection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ClearSelection.Location = new System.Drawing.Point(434, 48);
-            this.Btn_ClearSelection.Name = "Btn_ClearSelection";
-            this.Btn_ClearSelection.Size = new System.Drawing.Size(135, 35);
-            this.Btn_ClearSelection.TabIndex = 14;
-            this.Btn_ClearSelection.Text = "Limpiar";
-            this.Btn_ClearSelection.UseVisualStyleBackColor = true;
-            this.Btn_ClearSelection.Click += new System.EventHandler(this.Btn_ClearSelection_Click);
-            // 
             // Btn_Refresh
             // 
             this.Btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -482,6 +517,17 @@
             this.Btn_Refresh.Text = "Mostrar";
             this.Btn_Refresh.UseVisualStyleBackColor = true;
             this.Btn_Refresh.Click += new System.EventHandler(this.Btn_Refresh_Click);
+            // 
+            // Btn_ClearSelection
+            // 
+            this.Btn_ClearSelection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ClearSelection.Location = new System.Drawing.Point(434, 48);
+            this.Btn_ClearSelection.Name = "Btn_ClearSelection";
+            this.Btn_ClearSelection.Size = new System.Drawing.Size(135, 35);
+            this.Btn_ClearSelection.TabIndex = 14;
+            this.Btn_ClearSelection.Text = "Limpiar";
+            this.Btn_ClearSelection.UseVisualStyleBackColor = true;
+            this.Btn_ClearSelection.Click += new System.EventHandler(this.Btn_ClearSelection_Click);
             // 
             // Btn_Delete
             // 
@@ -575,51 +621,6 @@
             this.Pnl_MargenInferior.Size = new System.Drawing.Size(1004, 50);
             this.Pnl_MargenInferior.TabIndex = 6;
             // 
-            // CMS_UserDataTable
-            // 
-            this.CMS_UserDataTable.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.CMS_UserDataTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editarToolStripMenuItem,
-            this.borrarToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.seleccionarTodoToolStripMenuItem,
-            this.limpiarTodoToolStripMenuItem});
-            this.CMS_UserDataTable.Name = "CMS_UserDataTable";
-            this.CMS_UserDataTable.Size = new System.Drawing.Size(193, 134);
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
-            this.editarToolStripMenuItem.Text = "Editar";
-            this.editarToolStripMenuItem.Click += new System.EventHandler(this.editarToolStripMenuItem_Click);
-            // 
-            // borrarToolStripMenuItem
-            // 
-            this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
-            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
-            this.borrarToolStripMenuItem.Text = "Borrar";
-            this.borrarToolStripMenuItem.Click += new System.EventHandler(this.borrarToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(189, 6);
-            // 
-            // seleccionarTodoToolStripMenuItem
-            // 
-            this.seleccionarTodoToolStripMenuItem.Name = "seleccionarTodoToolStripMenuItem";
-            this.seleccionarTodoToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
-            this.seleccionarTodoToolStripMenuItem.Text = "Seleccionar Todo";
-            this.seleccionarTodoToolStripMenuItem.Click += new System.EventHandler(this.seleccionarTodoToolStripMenuItem_Click);
-            // 
-            // limpiarTodoToolStripMenuItem
-            // 
-            this.limpiarTodoToolStripMenuItem.Name = "limpiarTodoToolStripMenuItem";
-            this.limpiarTodoToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
-            this.limpiarTodoToolStripMenuItem.Text = "Limpiar Todo";
-            this.limpiarTodoToolStripMenuItem.Click += new System.EventHandler(this.limpiarTodoToolStripMenuItem_Click);
-            // 
             // FORM_FIREBASE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -650,11 +651,11 @@
             this.Pnl_Header2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_UserData)).EndInit();
+            this.CMS_UserDataTable.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.CMS_UserDataTable.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
