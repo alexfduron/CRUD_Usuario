@@ -63,6 +63,7 @@
             this.OFD_Foto = new System.Windows.Forms.OpenFileDialog();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.afD_ToggleButton1 = new CRUD_BIS.CONTROLS.AFD_ToggleButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -87,7 +88,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1183, 152);
+            this.panel1.Size = new System.Drawing.Size(1193, 152);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -100,7 +101,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(200, 107);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(783, 45);
+            this.panel3.Size = new System.Drawing.Size(793, 45);
             this.panel3.TabIndex = 4;
             // 
             // pnl_Buscar
@@ -110,7 +111,7 @@
             this.pnl_Buscar.Location = new System.Drawing.Point(0, 40);
             this.pnl_Buscar.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_Buscar.Name = "pnl_Buscar";
-            this.pnl_Buscar.Size = new System.Drawing.Size(609, 5);
+            this.pnl_Buscar.Size = new System.Drawing.Size(619, 5);
             this.pnl_Buscar.TabIndex = 3;
             // 
             // txt_Buscar
@@ -123,7 +124,7 @@
             this.txt_Buscar.Location = new System.Drawing.Point(0, 0);
             this.txt_Buscar.Margin = new System.Windows.Forms.Padding(0);
             this.txt_Buscar.Name = "txt_Buscar";
-            this.txt_Buscar.Size = new System.Drawing.Size(609, 40);
+            this.txt_Buscar.Size = new System.Drawing.Size(619, 40);
             this.txt_Buscar.TabIndex = 4;
             this.txt_Buscar.TextChanged += new System.EventHandler(this.txt_Buscar_TextChanged);
             // 
@@ -137,7 +138,7 @@
             this.btn_Buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btn_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Buscar.Image = global::CRUD_BIS.Properties.Resources.buscar_2;
-            this.btn_Buscar.Location = new System.Drawing.Point(609, 0);
+            this.btn_Buscar.Location = new System.Drawing.Point(619, 0);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(58, 45);
             this.btn_Buscar.TabIndex = 5;
@@ -154,7 +155,7 @@
             this.btn_Borrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btn_Borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Borrar.Image = global::CRUD_BIS.Properties.Resources.borrador;
-            this.btn_Borrar.Location = new System.Drawing.Point(667, 0);
+            this.btn_Borrar.Location = new System.Drawing.Point(677, 0);
             this.btn_Borrar.Name = "btn_Borrar";
             this.btn_Borrar.Size = new System.Drawing.Size(58, 45);
             this.btn_Borrar.TabIndex = 6;
@@ -171,7 +172,7 @@
             this.btn_Agregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Agregar.Image = global::CRUD_BIS.Properties.Resources.mas_2;
-            this.btn_Agregar.Location = new System.Drawing.Point(725, 0);
+            this.btn_Agregar.Location = new System.Drawing.Point(735, 0);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(58, 45);
             this.btn_Agregar.TabIndex = 7;
@@ -185,7 +186,7 @@
             this.lbl_Titulo.Font = new System.Drawing.Font("Consolas", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.Location = new System.Drawing.Point(200, 0);
             this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Size = new System.Drawing.Size(783, 107);
+            this.lbl_Titulo.Size = new System.Drawing.Size(793, 107);
             this.lbl_Titulo.TabIndex = 1;
             this.lbl_Titulo.Text = "VER USUARIO";
             this.lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -193,9 +194,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.afD_ToggleButton1);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(983, 0);
+            this.panel2.Location = new System.Drawing.Point(993, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 152);
             this.panel2.TabIndex = 2;
@@ -483,12 +485,27 @@
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             // 
+            // afD_ToggleButton1
+            // 
+            this.afD_ToggleButton1.AutoSize = true;
+            this.afD_ToggleButton1.Location = new System.Drawing.Point(41, 118);
+            this.afD_ToggleButton1.MinimumSize = new System.Drawing.Size(45, 22);
+            this.afD_ToggleButton1.Name = "afD_ToggleButton1";
+            this.afD_ToggleButton1.OffBackColor = System.Drawing.Color.DarkRed;
+            this.afD_ToggleButton1.OffToggleColor = System.Drawing.Color.Red;
+            this.afD_ToggleButton1.OnBlackColor = System.Drawing.Color.DarkGreen;
+            this.afD_ToggleButton1.OnToggleColor = System.Drawing.Color.Lime;
+            this.afD_ToggleButton1.Size = new System.Drawing.Size(45, 22);
+            this.afD_ToggleButton1.SolidStyle = false;
+            this.afD_ToggleButton1.TabIndex = 4;
+            this.afD_ToggleButton1.UseVisualStyleBackColor = true;
+            // 
             // FORM_USUARIO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1183, 734);
+            this.ClientSize = new System.Drawing.Size(1193, 734);
             this.Controls.Add(this.pnl_Menu2);
             this.Controls.Add(this.DGV_Listado);
             this.Controls.Add(this.panel1);
@@ -504,6 +521,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Listado)).EndInit();
@@ -556,5 +574,6 @@
         private System.Windows.Forms.DataGridViewImageColumn Editar;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private CONTROLS.AFD_ToggleButton afD_ToggleButton1;
     }
 }

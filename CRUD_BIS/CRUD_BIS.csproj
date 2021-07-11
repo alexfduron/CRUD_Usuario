@@ -101,6 +101,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONTROLS\AFD_ToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DATOS\DATOS_CONEXION.cs" />
     <Compile Include="DATOS\DATOS_USUARIO.cs" />
     <Compile Include="LOGICA\LOGICA_USUARIO.cs" />
@@ -180,6 +183,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
