@@ -101,6 +101,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CONTROLS\AFD_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CONTROLS\AFD_ToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -63,6 +63,7 @@
             this.OFD_Foto = new System.Windows.Forms.OpenFileDialog();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.afD_Button1 = new CRUD_BIS.CONTROLS.AFD_Button();
             this.afD_ToggleButton1 = new CRUD_BIS.CONTROLS.AFD_ToggleButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -81,6 +82,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.afD_Button1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.lbl_Titulo);
             this.panel1.Controls.Add(this.panel2);
@@ -485,6 +487,26 @@
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             // 
+            // afD_Button1
+            // 
+            this.afD_Button1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.afD_Button1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.afD_Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.afD_Button1.BorderRadius = 70;
+            this.afD_Button1.BorderSize = 5;
+            this.afD_Button1.FlatAppearance.BorderSize = 0;
+            this.afD_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.afD_Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.afD_Button1.ForeColor = System.Drawing.Color.White;
+            this.afD_Button1.Location = new System.Drawing.Point(819, 12);
+            this.afD_Button1.Name = "afD_Button1";
+            this.afD_Button1.Size = new System.Drawing.Size(168, 70);
+            this.afD_Button1.TabIndex = 5;
+            this.afD_Button1.Text = "afD_Button1";
+            this.afD_Button1.TextColor = System.Drawing.Color.White;
+            this.afD_Button1.TextSize = 16;
+            this.afD_Button1.UseVisualStyleBackColor = false;
+            // 
             // afD_ToggleButton1
             // 
             this.afD_ToggleButton1.AutoSize = true;
@@ -575,5 +597,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private CONTROLS.AFD_ToggleButton afD_ToggleButton1;
+        private CONTROLS.AFD_Button afD_Button1;
     }
 }
