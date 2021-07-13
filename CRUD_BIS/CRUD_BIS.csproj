@@ -104,6 +104,9 @@
     <Compile Include="CONTROLS\AFD_Button.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CONTROLS\AFD_DatePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CONTROLS\AFD_ToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -186,7 +189,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\calendario_blanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendario_negro.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">

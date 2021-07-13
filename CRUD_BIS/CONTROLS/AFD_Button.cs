@@ -10,6 +10,9 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.ComponentModel;
 
+//iconos de Flaticon
+//<div>Iconos diseñados por <a href="" title="srip">srip</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+//<div>Iconos diseñados por <a href="" title="srip">srip</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
 
 namespace CRUD_BIS.CONTROLS
 {
@@ -82,7 +85,7 @@ namespace CRUD_BIS.CONTROLS
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             //FIXME: revisar el borderRadius que se fija en 40 cuando arranca el formulario
-            this.Size = new Size(150, 40);
+            this.Size = new Size(150, 50);
             this.BackColor = Color.MediumSlateBlue;
             this.ForeColor = Color.White;
             this.Resize += new EventHandler(Button_Resize);
