@@ -24,11 +24,11 @@ namespace CRUD_BIS.CONTROLS
 
         //->Otros Valores
         private bool droppedDown = false;
-        private Image calendarIcon = Properties.Resources.calendario_blanco;
+                private Image calendarIcon = Properties.Resources.calendario_blanco;
         private RectangleF iconButtonArea;
         private const int calendarIconWidth = 34;
         private const int arrowIconWidth = 17;
-
+        
 
         //Propiedades
         [Category("Code Advance")]
@@ -38,6 +38,11 @@ namespace CRUD_BIS.CONTROLS
             set
             {
                 skinColor = value;
+                //Summary: gets the Hue-Saturation-Brightness (HSB) 
+                //brightness value for this System.Drawing.Color structure.
+                //
+                //Returns: The brightness range from 0.0 through 1.0, 
+                //where 0.0 represents black and 1.0 represents white.
                 if (skinColor.GetBrightness() >= 0.8F)
                 {
                     calendarIcon = Properties.Resources.calendario_negro;
@@ -108,7 +113,7 @@ namespace CRUD_BIS.CONTROLS
             using (StringFormat textFormat = new StringFormat())
             {
                 RectangleF clientArea = new RectangleF(0, 0, this.Width - 0.5F, this.Height - 0.5F);
-                RectangleF iconArea = new RectangleF(clientArea.Width - calendarIconWidth, 0, calendarIconWidth, clientArea.Height);
+                RectangleF iconArea = new RectangleF(clientArea.Width - GetIconButtonWidth(), 0, GetIconButtonWidth(), clientArea.Height);
                 penBorder.Alignment = PenAlignment.Inset;
                 textFormat.LineAlignment = StringAlignment.Center;
 
@@ -116,7 +121,7 @@ namespace CRUD_BIS.CONTROLS
                 graphics.FillRectangle(skinBrush, clientArea);
 
                 //Draw text
-                graphics.DrawString("   " + this.Text, this.Font, textBrush, clientArea, textFormat);
+                graphics.DrawString("  " + this.Text, this.Font, textBrush, clientArea, textFormat);
 
                 //Draw open calendar icon highlight
                 if(droppedDown == true)
@@ -131,7 +136,7 @@ namespace CRUD_BIS.CONTROLS
                 }
 
                 //Draw icon
-                graphics.DrawImage(calendarIcon, this.Width - calendarIcon.Width - 9, (this.Height - calendarIcon.Height) / 2);
+                graphics.DrawImage(calendarIcon, this.Width - GetIconButtonWidth() - 9, (this.Height - calendarIcon.Height) / 2);
             }
         }
 
