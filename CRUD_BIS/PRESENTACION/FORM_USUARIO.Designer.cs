@@ -63,6 +63,7 @@
             this.OFD_Foto = new System.Windows.Forms.OpenFileDialog();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.afD_Button2 = new CRUD_BIS.CONTROLS.AFD_Button();
             this.afD_RadioButton2 = new CRUD_BIS.CONTROLS.AFD_RadioButton();
             this.afD_RadioButton1 = new CRUD_BIS.CONTROLS.AFD_RadioButton();
             this.afD_DatePicker2 = new CRUD_BIS.CONTROLS.AFD_DatePicker();
@@ -86,6 +87,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.afD_Button2);
             this.panel1.Controls.Add(this.afD_RadioButton2);
             this.panel1.Controls.Add(this.afD_RadioButton1);
             this.panel1.Controls.Add(this.afD_DatePicker2);
@@ -495,31 +497,55 @@
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             // 
+            // afD_Button2
+            // 
+            this.afD_Button2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.afD_Button2.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.afD_Button2.BorderColor = System.Drawing.Color.Blue;
+            this.afD_Button2.BorderRadius = 40;
+            this.afD_Button2.BorderSize = 2;
+            this.afD_Button2.FlatAppearance.BorderSize = 0;
+            this.afD_Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.afD_Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.afD_Button2.ForeColor = System.Drawing.Color.White;
+            this.afD_Button2.Location = new System.Drawing.Point(401, 39);
+            this.afD_Button2.Name = "afD_Button2";
+            this.afD_Button2.Size = new System.Drawing.Size(80, 80);
+            this.afD_Button2.TabIndex = 8;
+            this.afD_Button2.Text = "OK";
+            this.afD_Button2.TextColor = System.Drawing.Color.White;
+            this.afD_Button2.TextSize = 16;
+            this.afD_Button2.UseVisualStyleBackColor = false;
+            // 
             // afD_RadioButton2
             // 
-            this.afD_RadioButton2.AutoSize = true;
+            this.afD_RadioButton2.BorderSize = 66F;
             this.afD_RadioButton2.Checked = true;
             this.afD_RadioButton2.CheckedColor = System.Drawing.Color.Red;
+            this.afD_RadioButton2.CheckSize = 19F;
             this.afD_RadioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.afD_RadioButton2.Location = new System.Drawing.Point(498, 55);
-            this.afD_RadioButton2.MinimumSize = new System.Drawing.Size(0, 21);
+            this.afD_RadioButton2.Location = new System.Drawing.Point(497, 69);
+            this.afD_RadioButton2.MinimumSize = new System.Drawing.Size(0, 20);
             this.afD_RadioButton2.Name = "afD_RadioButton2";
-            this.afD_RadioButton2.Size = new System.Drawing.Size(285, 37);
+            this.afD_RadioButton2.Size = new System.Drawing.Size(331, 71);
             this.afD_RadioButton2.TabIndex = 9;
             this.afD_RadioButton2.TabStop = true;
-            this.afD_RadioButton2.Text = "afD_RadioButton2";
+            this.afD_RadioButton2.Text = "afD_RadioButton2\r\nabc123";
+            this.afD_RadioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.afD_RadioButton2.UncheckedColor = System.Drawing.Color.Gray;
             this.afD_RadioButton2.UseVisualStyleBackColor = true;
             // 
             // afD_RadioButton1
             // 
             this.afD_RadioButton1.AutoSize = true;
+            this.afD_RadioButton1.BorderSize = 15F;
             this.afD_RadioButton1.CheckedColor = System.Drawing.Color.Lime;
+            this.afD_RadioButton1.CheckSize = 15F;
             this.afD_RadioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.afD_RadioButton1.Location = new System.Drawing.Point(498, 12);
-            this.afD_RadioButton1.MinimumSize = new System.Drawing.Size(0, 21);
+            this.afD_RadioButton1.MinimumSize = new System.Drawing.Size(0, 20);
             this.afD_RadioButton1.Name = "afD_RadioButton1";
-            this.afD_RadioButton1.Size = new System.Drawing.Size(285, 37);
+            this.afD_RadioButton1.Size = new System.Drawing.Size(280, 37);
             this.afD_RadioButton1.TabIndex = 8;
             this.afD_RadioButton1.Text = "afD_RadioButton1";
             this.afD_RadioButton1.UncheckedColor = System.Drawing.Color.Gray;
@@ -532,7 +558,7 @@
             this.afD_DatePicker2.CustomFormat = "dd-MMM-yy";
             this.afD_DatePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.afD_DatePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.afD_DatePicker2.Location = new System.Drawing.Point(787, 65);
+            this.afD_DatePicker2.Location = new System.Drawing.Point(849, 62);
             this.afD_DatePicker2.MinimumSize = new System.Drawing.Size(4, 35);
             this.afD_DatePicker2.Name = "afD_DatePicker2";
             this.afD_DatePicker2.Size = new System.Drawing.Size(200, 35);
@@ -558,7 +584,7 @@
             this.afD_Button1.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.afD_Button1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.afD_Button1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.afD_Button1.BorderRadius = 50;
+            this.afD_Button1.BorderRadius = 40;
             this.afD_Button1.BorderSize = 5;
             this.afD_Button1.FlatAppearance.BorderSize = 0;
             this.afD_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -575,15 +601,14 @@
             // 
             // afD_ToggleButton1
             // 
-            this.afD_ToggleButton1.AutoSize = true;
-            this.afD_ToggleButton1.Location = new System.Drawing.Point(41, 118);
+            this.afD_ToggleButton1.Location = new System.Drawing.Point(41, 107);
             this.afD_ToggleButton1.MinimumSize = new System.Drawing.Size(45, 22);
             this.afD_ToggleButton1.Name = "afD_ToggleButton1";
             this.afD_ToggleButton1.OffBackColor = System.Drawing.Color.DarkRed;
             this.afD_ToggleButton1.OffToggleColor = System.Drawing.Color.Red;
             this.afD_ToggleButton1.OnBlackColor = System.Drawing.Color.DarkGreen;
             this.afD_ToggleButton1.OnToggleColor = System.Drawing.Color.Lime;
-            this.afD_ToggleButton1.Size = new System.Drawing.Size(45, 22);
+            this.afD_ToggleButton1.Size = new System.Drawing.Size(63, 33);
             this.afD_ToggleButton1.SolidStyle = false;
             this.afD_ToggleButton1.TabIndex = 4;
             this.afD_ToggleButton1.UseVisualStyleBackColor = true;
@@ -610,7 +635,6 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Listado)).EndInit();
@@ -669,5 +693,6 @@
         private CONTROLS.AFD_DatePicker afD_DatePicker2;
         private CONTROLS.AFD_RadioButton afD_RadioButton1;
         private CONTROLS.AFD_RadioButton afD_RadioButton2;
+        private CONTROLS.AFD_Button afD_Button2;
     }
 }

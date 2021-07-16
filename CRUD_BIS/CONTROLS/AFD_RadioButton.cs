@@ -18,6 +18,8 @@ namespace CRUD_BIS.CONTROLS
         //Campos
         private Color checkedColor = Color.MediumSlateBlue;
         private Color uncheckedColor = Color.Gray;
+        private float rbBorderSize = 30;
+        private float rbCheckSize = 20;
 
         //Propiedades
         [Category("Code Advance")]
@@ -34,11 +36,55 @@ namespace CRUD_BIS.CONTROLS
             set { uncheckedColor = value; this.Invalidate(); }
         }
 
+        [Category("Code Advance")]
+        public float BorderSize
+        {
+            get { return rbBorderSize; }
+            set
+            {
+                if (this.DesignMode == false)
+                {
+                    rbBorderSize = value;
+                }
+                else
+                {
+                    if(value <= this.Height - 5)
+                    {
+                        rbBorderSize = value;
+                    }
+                    else
+                    {
+                        rbBorderSize = this.Height - 5;
+                    }
+                }
+                this.Width = TextRenderer.MeasureText(this.Text, this.Font).Width + Convert.ToInt32(rbBorderSize) + 10;
+                this.Invalidate(); 
+            }
+        }
+        
+        [Category("Code Advance")]
+        public float CheckSize
+        {
+            get { return rbCheckSize; }
+            set
+            {
+                if(value <= rbBorderSize)
+                {
+                    rbCheckSize = value;
+                }
+                else
+                {
+                    rbCheckSize = rbBorderSize;
+                }
+                this.Invalidate();
+            }
+        }
+
         //Constructor
         public AFD_RadioButton()
         {
-            this.MinimumSize = new Size(0, 21);
-
+            this.MinimumSize = new Size(0, 20);
+            //this.Size = new Size(100, 20);
         }
 
         //Overriden method
@@ -46,8 +92,7 @@ namespace CRUD_BIS.CONTROLS
         {
             Graphics graphics = pevent.Graphics;
             graphics.SmoothingMode = SmoothingMode.AntiAlias;
-            float rbBorderSize = 18F;
-            float rbCheckSize = 12F;
+
             RectangleF rectRbBorder = new RectangleF()
             {
                 X = 0.5F,
@@ -55,6 +100,7 @@ namespace CRUD_BIS.CONTROLS
                 Width = rbBorderSize,
                 Height = rbBorderSize
             };
+
             RectangleF rectRbCheck = new RectangleF()
             {
                 X = rectRbBorder.X + ((rectRbBorder.Width - rbCheckSize) / 2), //Centro
@@ -85,6 +131,7 @@ namespace CRUD_BIS.CONTROLS
 
                 //Draw text
                 graphics.DrawString(this.Text, this.Font, brushText, rbBorderSize + 8, (this.Height - TextRenderer.MeasureText(this.Text, this.Font).Height) / 2);
+                this.Width = TextRenderer.MeasureText(this.Text, this.Font).Width + Convert.ToInt32(rbBorderSize) + 10;
             }
 
         }
@@ -92,7 +139,8 @@ namespace CRUD_BIS.CONTROLS
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            this.Width = TextRenderer.MeasureText(this.Text, this.Font).Width + 30;
+            this.Width = TextRenderer.MeasureText(this.Text, this.Font).Width + Convert.ToInt32(rbBorderSize) + 10;
+            this.MinimumSize = new Size(0, 20);
         }
 
     }

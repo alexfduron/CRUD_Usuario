@@ -38,13 +38,20 @@ namespace CRUD_BIS.CONTROLS
             get { return borderRadius; }
             set
             {
-                if (value <= this.Height)
+                if (this.DesignMode == false)
                 {
                     borderRadius = value;
                 }
                 else
                 {
-                    borderRadius = this.Height;
+                    if (value <= this.Height)
+                    {
+                        borderRadius = value;
+                    }
+                    else
+                    {
+                        borderRadius = this.Height;
+                    }
                 }
                 this.Invalidate();
             }
@@ -85,7 +92,7 @@ namespace CRUD_BIS.CONTROLS
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             //FIXME: revisar el borderRadius que se fija en 40 cuando arranca el formulario
-            this.Size = new Size(150, 50);
+            this.Size = new Size(150, 40);
             this.BackColor = Color.MediumSlateBlue;
             this.ForeColor = Color.White;
             this.Resize += new EventHandler(Button_Resize);
