@@ -104,6 +104,15 @@
     <Compile Include="CONTROLS\AFD_Button.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CONTROLS\AFD_Button2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CONTROLS\AFD_Button3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CONTROLS\AFD_Button3.Designer.cs">
+      <DependentUpon>AFD_Button3.cs</DependentUpon>
+    </Compile>
     <Compile Include="CONTROLS\AFD_DatePicker.cs">
       <SubType>Component</SubType>
     </Compile>

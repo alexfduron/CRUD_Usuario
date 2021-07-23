@@ -63,6 +63,7 @@
             this.OFD_Foto = new System.Windows.Forms.OpenFileDialog();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.afD_Button31 = new CRUD_BIS.CONTROLS.AFD_Button3();
             this.afD_Button2 = new CRUD_BIS.CONTROLS.AFD_Button();
             this.afD_RadioButton2 = new CRUD_BIS.CONTROLS.AFD_RadioButton();
             this.afD_RadioButton1 = new CRUD_BIS.CONTROLS.AFD_RadioButton();
@@ -283,6 +284,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.afD_Button31);
             this.panel5.Controls.Add(this.pic_Foto);
             this.panel5.Controls.Add(this.panel8);
             this.panel5.Controls.Add(this.panel6);
@@ -497,6 +499,15 @@
             this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             // 
+            // afD_Button31
+            // 
+            this.afD_Button31.Location = new System.Drawing.Point(17, 18);
+            this.afD_Button31.Name = "afD_Button31";
+            this.afD_Button31.Size = new System.Drawing.Size(204, 42);
+            this.afD_Button31.TabIndex = 8;
+            this.afD_Button31.Text = "afD_Button31";
+            this.afD_Button31.Click += new System.EventHandler(this.afD_Button31_Click);
+            // 
             // afD_Button2
             // 
             this.afD_Button2.BackColor = System.Drawing.Color.RoyalBlue;
@@ -519,7 +530,7 @@
             // 
             // afD_RadioButton2
             // 
-            this.afD_RadioButton2.BorderSize = 66F;
+            this.afD_RadioButton2.BorderSize = 30F;
             this.afD_RadioButton2.Checked = true;
             this.afD_RadioButton2.CheckedColor = System.Drawing.Color.Red;
             this.afD_RadioButton2.CheckSize = 19F;
@@ -527,7 +538,7 @@
             this.afD_RadioButton2.Location = new System.Drawing.Point(497, 69);
             this.afD_RadioButton2.MinimumSize = new System.Drawing.Size(0, 20);
             this.afD_RadioButton2.Name = "afD_RadioButton2";
-            this.afD_RadioButton2.Size = new System.Drawing.Size(331, 71);
+            this.afD_RadioButton2.Size = new System.Drawing.Size(295, 71);
             this.afD_RadioButton2.TabIndex = 9;
             this.afD_RadioButton2.TabStop = true;
             this.afD_RadioButton2.Text = "afD_RadioButton2\r\nabc123";
@@ -538,14 +549,14 @@
             // afD_RadioButton1
             // 
             this.afD_RadioButton1.AutoSize = true;
-            this.afD_RadioButton1.BorderSize = 15F;
+            this.afD_RadioButton1.BorderSize = 30F;
             this.afD_RadioButton1.CheckedColor = System.Drawing.Color.Lime;
             this.afD_RadioButton1.CheckSize = 15F;
             this.afD_RadioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.afD_RadioButton1.Location = new System.Drawing.Point(498, 12);
             this.afD_RadioButton1.MinimumSize = new System.Drawing.Size(0, 20);
             this.afD_RadioButton1.Name = "afD_RadioButton1";
-            this.afD_RadioButton1.Size = new System.Drawing.Size(280, 37);
+            this.afD_RadioButton1.Size = new System.Drawing.Size(295, 37);
             this.afD_RadioButton1.TabIndex = 8;
             this.afD_RadioButton1.Text = "afD_RadioButton1";
             this.afD_RadioButton1.UncheckedColor = System.Drawing.Color.Gray;
@@ -694,5 +705,6 @@
         private CONTROLS.AFD_RadioButton afD_RadioButton1;
         private CONTROLS.AFD_RadioButton afD_RadioButton2;
         private CONTROLS.AFD_Button afD_Button2;
+        private CONTROLS.AFD_Button3 afD_Button31;
     }
 }

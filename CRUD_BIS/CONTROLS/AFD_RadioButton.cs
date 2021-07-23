@@ -21,6 +21,8 @@ namespace CRUD_BIS.CONTROLS
         private float rbBorderSize = 30;
         private float rbCheckSize = 20;
 
+        
+
         //Propiedades
         [Category("Code Advance")]
         public Color CheckedColor
@@ -42,12 +44,34 @@ namespace CRUD_BIS.CONTROLS
             get { return rbBorderSize; }
             set
             {
-                if (this.DesignMode == false)
+
+                /*
+                Boolean isInWpfDesignerMode = (LicenseManager.UsageMode == LicenseUsageMode.Designtime);
+                Boolean isInFormsDesignerMode = (System.Diagnostics.Process.GetCurrentProcess().ProcessName == "devenv");
+
+                if (isInWpfDesignerMode || isInFormsDesignerMode)
                 {
-                    rbBorderSize = value;
+                    // is in any designer mode
+                    MessageBox.Show("DM");
                 }
                 else
                 {
+                    // not in designer mode
+                    MessageBox.Show("NDM");
+                }
+                // show current mode
+                MessageBox.Show(String.Format("DESIGNER CHECK:  WPF = {0}   Forms = {1}", isInWpfDesignerMode, isInFormsDesignerMode));
+                */
+
+                if (this.DesignMode == false)
+                {
+                    //rbBorderSize = value;
+                    MessageBox.Show("No Design Model");
+                }
+                else
+                {
+                    MessageBox.Show("Design Model");
+                    /*
                     if(value <= this.Height - 5)
                     {
                         rbBorderSize = value;
@@ -56,9 +80,10 @@ namespace CRUD_BIS.CONTROLS
                     {
                         rbBorderSize = this.Height - 5;
                     }
+                    */
                 }
-                this.Width = TextRenderer.MeasureText(this.Text, this.Font).Width + Convert.ToInt32(rbBorderSize) + 10;
-                this.Invalidate(); 
+                //this.Width = TextRenderer.MeasureText(this.Text, this.Font).Width + Convert.ToInt32(rbBorderSize) + 10;
+                //this.Invalidate(); 
             }
         }
         

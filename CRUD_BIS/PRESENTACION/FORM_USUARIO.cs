@@ -328,8 +328,9 @@ namespace CRUD_BIS.PRESENTACION
 
         }
 
-
-
-
+        private void afD_Button31_Click(object sender, EventArgs e)
+        {
+            this.afD_Button31.Activado = !this.afD_Button31.Activado;
+        }
     }
 }
