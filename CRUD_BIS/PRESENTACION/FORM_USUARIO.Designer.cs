@@ -64,6 +64,7 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.afD_Button31 = new CRUD_BIS.CONTROLS.AFD_Button3();
+            this.afD_Button21 = new CRUD_BIS.CONTROLS.AFD_Button2();
             this.afD_Button2 = new CRUD_BIS.CONTROLS.AFD_Button();
             this.afD_RadioButton2 = new CRUD_BIS.CONTROLS.AFD_RadioButton();
             this.afD_RadioButton1 = new CRUD_BIS.CONTROLS.AFD_RadioButton();
@@ -88,6 +89,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.afD_Button21);
             this.panel1.Controls.Add(this.afD_Button2);
             this.panel1.Controls.Add(this.afD_RadioButton2);
             this.panel1.Controls.Add(this.afD_RadioButton1);
@@ -101,7 +103,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1193, 152);
+            this.panel1.Size = new System.Drawing.Size(1511, 152);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -114,7 +116,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(200, 107);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(793, 45);
+            this.panel3.Size = new System.Drawing.Size(1111, 45);
             this.panel3.TabIndex = 4;
             // 
             // pnl_Buscar
@@ -124,7 +126,7 @@
             this.pnl_Buscar.Location = new System.Drawing.Point(0, 40);
             this.pnl_Buscar.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_Buscar.Name = "pnl_Buscar";
-            this.pnl_Buscar.Size = new System.Drawing.Size(619, 5);
+            this.pnl_Buscar.Size = new System.Drawing.Size(937, 5);
             this.pnl_Buscar.TabIndex = 3;
             // 
             // txt_Buscar
@@ -137,7 +139,7 @@
             this.txt_Buscar.Location = new System.Drawing.Point(0, 0);
             this.txt_Buscar.Margin = new System.Windows.Forms.Padding(0);
             this.txt_Buscar.Name = "txt_Buscar";
-            this.txt_Buscar.Size = new System.Drawing.Size(619, 40);
+            this.txt_Buscar.Size = new System.Drawing.Size(937, 40);
             this.txt_Buscar.TabIndex = 4;
             this.txt_Buscar.TextChanged += new System.EventHandler(this.txt_Buscar_TextChanged);
             // 
@@ -151,7 +153,7 @@
             this.btn_Buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btn_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Buscar.Image = global::CRUD_BIS.Properties.Resources.buscar_2;
-            this.btn_Buscar.Location = new System.Drawing.Point(619, 0);
+            this.btn_Buscar.Location = new System.Drawing.Point(937, 0);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(58, 45);
             this.btn_Buscar.TabIndex = 5;
@@ -168,7 +170,7 @@
             this.btn_Borrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btn_Borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Borrar.Image = global::CRUD_BIS.Properties.Resources.borrador;
-            this.btn_Borrar.Location = new System.Drawing.Point(677, 0);
+            this.btn_Borrar.Location = new System.Drawing.Point(995, 0);
             this.btn_Borrar.Name = "btn_Borrar";
             this.btn_Borrar.Size = new System.Drawing.Size(58, 45);
             this.btn_Borrar.TabIndex = 6;
@@ -185,7 +187,7 @@
             this.btn_Agregar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MidnightBlue;
             this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Agregar.Image = global::CRUD_BIS.Properties.Resources.mas_2;
-            this.btn_Agregar.Location = new System.Drawing.Point(735, 0);
+            this.btn_Agregar.Location = new System.Drawing.Point(1053, 0);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(58, 45);
             this.btn_Agregar.TabIndex = 7;
@@ -199,7 +201,7 @@
             this.lbl_Titulo.Font = new System.Drawing.Font("Consolas", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Titulo.Location = new System.Drawing.Point(200, 0);
             this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Size = new System.Drawing.Size(793, 107);
+            this.lbl_Titulo.Size = new System.Drawing.Size(1111, 107);
             this.lbl_Titulo.TabIndex = 1;
             this.lbl_Titulo.Text = "VER USUARIO";
             this.lbl_Titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -210,7 +212,7 @@
             this.panel2.Controls.Add(this.afD_ToggleButton1);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(993, 0);
+            this.panel2.Location = new System.Drawing.Point(1311, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 152);
             this.panel2.TabIndex = 2;
@@ -503,23 +505,52 @@
             // 
             this.afD_Button31.Location = new System.Drawing.Point(17, 18);
             this.afD_Button31.Name = "afD_Button31";
-            this.afD_Button31.Size = new System.Drawing.Size(204, 42);
+            this.afD_Button31.Size = new System.Drawing.Size(206, 42);
             this.afD_Button31.TabIndex = 8;
             this.afD_Button31.Text = "afD_Button31";
             this.afD_Button31.Click += new System.EventHandler(this.afD_Button31_Click);
+            // 
+            // afD_Button21
+            // 
+            this.afD_Button21.BackColor = System.Drawing.Color.Transparent;
+            this.afD_Button21.BorderColor = System.Drawing.Color.Transparent;
+            this.afD_Button21.BorderWidth = 5;
+            this.afD_Button21.ButtonShape = CRUD_BIS.CONTROLS.AFD_Button2.ButtonsShapes.Circle;
+            this.afD_Button21.ButtonText = "Hola";
+            this.afD_Button21.EndColor = System.Drawing.Color.MidnightBlue;
+            this.afD_Button21.FlatAppearance.BorderSize = 0;
+            this.afD_Button21.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.afD_Button21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.afD_Button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.afD_Button21.GradientAngle = 90;
+            this.afD_Button21.Location = new System.Drawing.Point(939, 12);
+            this.afD_Button21.MouseClickColor1 = System.Drawing.Color.Yellow;
+            this.afD_Button21.MouseClickColor2 = System.Drawing.Color.Red;
+            this.afD_Button21.MouseHoverColor1 = System.Drawing.Color.Turquoise;
+            this.afD_Button21.MouseHoverColor2 = System.Drawing.Color.DarkSlateGray;
+            this.afD_Button21.Name = "afD_Button21";
+            this.afD_Button21.ShowButtontext = true;
+            this.afD_Button21.Size = new System.Drawing.Size(119, 114);
+            this.afD_Button21.StartColor = System.Drawing.Color.DodgerBlue;
+            this.afD_Button21.TabIndex = 10;
+            this.afD_Button21.TextLocation_X = 28;
+            this.afD_Button21.TextLocation_Y = 43;
+            this.afD_Button21.Transparent1 = 200;
+            this.afD_Button21.Transparent2 = 200;
+            this.afD_Button21.UseVisualStyleBackColor = false;
             // 
             // afD_Button2
             // 
             this.afD_Button2.BackColor = System.Drawing.Color.RoyalBlue;
             this.afD_Button2.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.afD_Button2.BorderColor = System.Drawing.Color.Blue;
-            this.afD_Button2.BorderRadius = 40;
+            this.afD_Button2.BorderRadius = 80;
             this.afD_Button2.BorderSize = 2;
             this.afD_Button2.FlatAppearance.BorderSize = 0;
             this.afD_Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.afD_Button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.afD_Button2.ForeColor = System.Drawing.Color.White;
-            this.afD_Button2.Location = new System.Drawing.Point(401, 39);
+            this.afD_Button2.Location = new System.Drawing.Point(385, 12);
             this.afD_Button2.Name = "afD_Button2";
             this.afD_Button2.Size = new System.Drawing.Size(80, 80);
             this.afD_Button2.TabIndex = 8;
@@ -569,7 +600,7 @@
             this.afD_DatePicker2.CustomFormat = "dd-MMM-yy";
             this.afD_DatePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold);
             this.afD_DatePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.afD_DatePicker2.Location = new System.Drawing.Point(849, 62);
+            this.afD_DatePicker2.Location = new System.Drawing.Point(1076, 12);
             this.afD_DatePicker2.MinimumSize = new System.Drawing.Size(4, 35);
             this.afD_DatePicker2.Name = "afD_DatePicker2";
             this.afD_DatePicker2.Size = new System.Drawing.Size(200, 35);
@@ -601,7 +632,7 @@
             this.afD_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.afD_Button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.afD_Button1.ForeColor = System.Drawing.Color.White;
-            this.afD_Button1.Location = new System.Drawing.Point(210, 12);
+            this.afD_Button1.Location = new System.Drawing.Point(210, 13);
             this.afD_Button1.Name = "afD_Button1";
             this.afD_Button1.Size = new System.Drawing.Size(168, 50);
             this.afD_Button1.TabIndex = 5;
@@ -629,7 +660,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(1193, 734);
+            this.ClientSize = new System.Drawing.Size(1511, 734);
             this.Controls.Add(this.pnl_Menu2);
             this.Controls.Add(this.DGV_Listado);
             this.Controls.Add(this.panel1);
@@ -706,5 +737,6 @@
         private CONTROLS.AFD_RadioButton afD_RadioButton2;
         private CONTROLS.AFD_Button afD_Button2;
         private CONTROLS.AFD_Button3 afD_Button31;
+        private CONTROLS.AFD_Button2 afD_Button21;
     }
 }
