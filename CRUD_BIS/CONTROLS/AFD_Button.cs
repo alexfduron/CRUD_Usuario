@@ -25,14 +25,16 @@ namespace CRUD_BIS.CONTROLS
         private Color borderColor = Color.PaleVioletRed;
 
         //Propiedades
-        [Category("Code Advance")]
+        [Description("Modifica el ancho del borde")]
+        [Category("AFD Code Advance")]
         public int BorderSize
         {
             get { return borderSize; }
             set { borderSize = value; this.Invalidate(); }
         }
 
-        [Category("Code Advance")]
+        [Description("Modifica el radio del borde")]
+        [Category("AFD Code Advance")]
         public int BorderRadius
         {
             get { return borderRadius; }
@@ -57,28 +59,32 @@ namespace CRUD_BIS.CONTROLS
             }
         }
 
-        [Category("Code Advance")]
+        [Description("Modifica el color del borde")]
+        [Category("AFD Code Advance")]
         public Color BorderColor
         {
             get { return borderColor; }
             set { borderColor = value; this.Invalidate(); }
         }
 
-        [Category("Code Advance")]
+        [Description("Modifica el color del fondo")]
+        [Category("AFD Code Advance")]
         public Color BackgroundColor
         {
             get { return this.BackColor; }
             set { this.BackColor = value; }
         }
 
-        [Category("Code Advance")]
+        [Description("Modifica el color del texto")]
+        [Category("AFD Code Advance")]
         public Color TextColor
         {
             get { return this.ForeColor; }
             set { this.ForeColor = value; }
         }
-        
-        [Category("Code Advance")]
+
+        [Description("Modifica el tamaño del texto")]
+        [Category("AFD Code Advance")]
         public int TextSize
         {
             get { return Convert.ToInt32(this.Font.Size); }

@@ -23,42 +23,48 @@ namespace CRUD_BIS.CONTROLS
         private bool solidStyle = true;
 
         //Propiedades
-        [Category("Code Advance")]
+        [Description("Modifica el color del fondo al esta activo")]
+        [Category("AFD Code Advance")]
         public Color OnBlackColor
         {
             get { return onBackColor; }
             set { onBackColor = value; this.Invalidate(); }
         }
 
-        [Category("Code Advance")]
+        [Description("Modifica el color del circulo al esta activo")]
+        [Category("AFD Code Advance")]
         public Color OnToggleColor
         {
             get { return onToggleColor; }
             set { onToggleColor = value; this.Invalidate(); }
         }
 
-        [Category("Code Advance")]
+        [Description("Modifica el color del fondo al esta inactivo")]
+        [Category("AFD Code Advance")]
         public Color OffBackColor
         {
             get { return offBackColor; }
             set { offBackColor = value; this.Invalidate(); }
         }
 
-        [Category("Code Advance")]
+        [Description("Modifica el color del circulo al esta inactivo")]
+        [Category("AFD Code Advance")]
         public Color OffToggleColor
         {
             get { return offToggleColor; }
             set { offToggleColor = value; this.Invalidate(); }
         }
 
-        [Category("Code Advance")]
+        [Description("Modifica el texto del control")]
+        [Category("AFD Code Advance")]
         public override string Text
         {
             get { return base.Text; }
             set { }
         }
 
-        [Category("Code Advance")]
+        [Description("Modifica el estilo del control")]
+        [Category("AFD Code Advance")]
         [DefaultValue(true)]
         public bool SolidStyle
         {

@@ -21,24 +21,27 @@ namespace CRUD_BIS.CONTROLS
         private float rbBorderSize = 30;
         private float rbCheckSize = 20;
 
-        
+
 
         //Propiedades
-        [Category("Code Advance")]
+        [Description("Modifica el color del circulo al estar activo")]
+        [Category("AFD Code Advance")]
         public Color CheckedColor
         {
             get { return checkedColor; }
             set { checkedColor = value; this.Invalidate(); }
         }
 
-        [Category("Code Advance")]
+        [Description("Modifica el color del circulo al estar inactivo")]
+        [Category("AFD Code Advance")]
         public Color UncheckedColor
         {
             get { return uncheckedColor; }
             set { uncheckedColor = value; this.Invalidate(); }
         }
 
-        [Category("Code Advance")]
+        [Description("Modifica el tamaño del circulo")]
+        [Category("AFD Code Advance")]
         public float BorderSize
         {
             get { return rbBorderSize; }
@@ -65,13 +68,13 @@ namespace CRUD_BIS.CONTROLS
 
                 if (this.DesignMode == false)
                 {
-                    //rbBorderSize = value;
-                    MessageBox.Show("No Design Model");
+                    rbBorderSize = value;
+                    //MessageBox.Show("No Design Model");
                 }
                 else
                 {
-                    MessageBox.Show("Design Model");
-                    /*
+                    //MessageBox.Show("Design Model");
+                    
                     if(value <= this.Height - 5)
                     {
                         rbBorderSize = value;
@@ -80,14 +83,15 @@ namespace CRUD_BIS.CONTROLS
                     {
                         rbBorderSize = this.Height - 5;
                     }
-                    */
+                    
                 }
-                //this.Width = TextRenderer.MeasureText(this.Text, this.Font).Width + Convert.ToInt32(rbBorderSize) + 10;
-                //this.Invalidate(); 
+                this.Width = TextRenderer.MeasureText(this.Text, this.Font).Width + Convert.ToInt32(rbBorderSize) + 10;
+                this.Invalidate(); 
             }
         }
-        
-        [Category("Code Advance")]
+
+        [Description("Modifica el tamaño del punto")]
+        [Category("AFD Code Advance")]
         public float CheckSize
         {
             get { return rbCheckSize; }

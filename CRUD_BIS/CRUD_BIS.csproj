@@ -119,6 +119,12 @@
     <Compile Include="CONTROLS\AFD_RadioButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CONTROLS\AFD_TextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CONTROLS\AFD_TextBox.Designer.cs">
+      <DependentUpon>AFD_TextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="CONTROLS\AFD_ToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     <Compile Include="PRESENTACION\PersonalData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CONTROLS\AFD_TextBox.resx">
+      <DependentUpon>AFD_TextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PRESENTACION\FORM_FIREBASE.resx">
       <DependentUpon>FORM_FIREBASE.cs</DependentUpon>
     </EmbeddedResource>

@@ -13,16 +13,21 @@ namespace CRUD_BIS.CONTROLS
     public partial class AFD_Button3 : Control
     {
 
+        //Campos
         private bool presionado = false;
         private bool activado = false;
 
+
+        //Constructor
         public AFD_Button3()
         {
             InitializeComponent();
         }
 
+
+        //Propiedades
         [Description("Dice si el control esta activado")]
-        [Category("Codigo Avanzado")]
+        [Category("AFD Code Advance")]
         [DefaultValue(false)]
 
         public bool Activado
@@ -36,8 +41,8 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Muestra el texto en el control")]
-        [Category("Codigo Avanzado")]
-        
+        [Category("AFD Code Advance")]
+
 
         //agregamos un 'new' a la propiedad text
         //para obtener una version propia y colocar el codigo que necesitamos
@@ -49,6 +54,8 @@ namespace CRUD_BIS.CONTROLS
             set { base.Text = value; this.Invalidate(); }
         }
 
+
+        //Metodos
         protected override void OnPaint(PaintEventArgs pe)
         {
             //base.OnPaint(pe);

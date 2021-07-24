@@ -544,7 +544,7 @@
             this.afD_Button2.BackColor = System.Drawing.Color.RoyalBlue;
             this.afD_Button2.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.afD_Button2.BorderColor = System.Drawing.Color.Blue;
-            this.afD_Button2.BorderRadius = 80;
+            this.afD_Button2.BorderRadius = 40;
             this.afD_Button2.BorderSize = 2;
             this.afD_Button2.FlatAppearance.BorderSize = 0;
             this.afD_Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -561,7 +561,7 @@
             // 
             // afD_RadioButton2
             // 
-            this.afD_RadioButton2.BorderSize = 30F;
+            this.afD_RadioButton2.BorderSize = 19F;
             this.afD_RadioButton2.Checked = true;
             this.afD_RadioButton2.CheckedColor = System.Drawing.Color.Red;
             this.afD_RadioButton2.CheckSize = 19F;
@@ -569,7 +569,7 @@
             this.afD_RadioButton2.Location = new System.Drawing.Point(497, 69);
             this.afD_RadioButton2.MinimumSize = new System.Drawing.Size(0, 20);
             this.afD_RadioButton2.Name = "afD_RadioButton2";
-            this.afD_RadioButton2.Size = new System.Drawing.Size(295, 71);
+            this.afD_RadioButton2.Size = new System.Drawing.Size(284, 71);
             this.afD_RadioButton2.TabIndex = 9;
             this.afD_RadioButton2.TabStop = true;
             this.afD_RadioButton2.Text = "afD_RadioButton2\r\nabc123";
@@ -580,14 +580,14 @@
             // afD_RadioButton1
             // 
             this.afD_RadioButton1.AutoSize = true;
-            this.afD_RadioButton1.BorderSize = 30F;
+            this.afD_RadioButton1.BorderSize = 19F;
             this.afD_RadioButton1.CheckedColor = System.Drawing.Color.Lime;
             this.afD_RadioButton1.CheckSize = 15F;
             this.afD_RadioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.afD_RadioButton1.Location = new System.Drawing.Point(498, 12);
             this.afD_RadioButton1.MinimumSize = new System.Drawing.Size(0, 20);
             this.afD_RadioButton1.Name = "afD_RadioButton1";
-            this.afD_RadioButton1.Size = new System.Drawing.Size(295, 37);
+            this.afD_RadioButton1.Size = new System.Drawing.Size(284, 37);
             this.afD_RadioButton1.TabIndex = 8;
             this.afD_RadioButton1.Text = "afD_RadioButton1";
             this.afD_RadioButton1.UncheckedColor = System.Drawing.Color.Gray;

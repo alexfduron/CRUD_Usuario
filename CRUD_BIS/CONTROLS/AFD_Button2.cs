@@ -51,7 +51,7 @@ namespace CRUD_BIS.CONTROLS
         ButtonsShapes buttonShape;
 
         [Description("Modifica la forma del boton")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
         [DefaultValue("Rect")]
 
         public ButtonsShapes ButtonShape
@@ -64,7 +64,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Modifica el texto del boton")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public String ButtonText
         {
@@ -73,7 +73,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Modifica el ancho del borde")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public int BorderWidth
         {
@@ -105,7 +105,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Cambia el color del borde")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public Color BorderColor
         {
@@ -127,7 +127,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Cambia el primer color")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public Color StartColor
         {
@@ -136,7 +136,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Cambia el segundo color")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public Color EndColor
         {
@@ -145,7 +145,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Cambia el primer color al pasar el cursor")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public Color MouseHoverColor1
         {
@@ -154,7 +154,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Cambia el segundo color al pasar el cursor")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public Color MouseHoverColor2
         {
@@ -163,7 +163,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Cambia el primer color al dar click")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public Color MouseClickColor1
         {
@@ -172,7 +172,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Cambia el segundo color al dar click")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public Color MouseClickColor2
         {
@@ -181,7 +181,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Modifica la transparencia del primer color")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public int Transparent1
         {
@@ -200,7 +200,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Modifica la transparencia del segundo color")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public int Transparent2
         {
@@ -219,7 +219,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Modifica el angulo del color")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public int GradientAngle
         {
@@ -228,7 +228,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Modifica la ubicacion del texto horizontalmente")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public int TextLocation_X
         {
@@ -237,7 +237,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Modifica la ubicacion del texto verticalmente")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public int TextLocation_Y
         {
@@ -246,7 +246,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Cambia la aparicion del texto en el boton")]
-        [Category("Code Advance")]
+        [Category("AFD Code Advance")]
 
         public Boolean ShowButtontext
         {
