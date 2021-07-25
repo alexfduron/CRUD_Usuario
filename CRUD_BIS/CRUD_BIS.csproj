@@ -113,6 +113,9 @@
     <Compile Include="CONTROLS\AFD_Button3.Designer.cs">
       <DependentUpon>AFD_Button3.cs</DependentUpon>
     </Compile>
+    <Compile Include="CONTROLS\AFD_ComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="CONTROLS\AFD_DatePicker.cs">
       <SubType>Component</SubType>
     </Compile>

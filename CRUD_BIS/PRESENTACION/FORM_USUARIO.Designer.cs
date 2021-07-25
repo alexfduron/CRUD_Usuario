@@ -544,7 +544,7 @@
             this.afD_Button2.BackColor = System.Drawing.Color.RoyalBlue;
             this.afD_Button2.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.afD_Button2.BorderColor = System.Drawing.Color.Blue;
-            this.afD_Button2.BorderRadius = 40;
+            this.afD_Button2.BorderRadius = 80;
             this.afD_Button2.BorderSize = 2;
             this.afD_Button2.FlatAppearance.BorderSize = 0;
             this.afD_Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

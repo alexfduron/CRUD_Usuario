@@ -168,8 +168,11 @@ namespace CRUD_BIS.CONTROLS
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            this.Width = TextRenderer.MeasureText(this.Text, this.Font).Width + Convert.ToInt32(rbBorderSize) + 10;
-            this.MinimumSize = new Size(0, 20);
+            if (this.DesignMode == true)
+            {
+                this.Width = TextRenderer.MeasureText(this.Text, this.Font).Width + Convert.ToInt32(rbBorderSize) + 10;
+                this.MinimumSize = new Size(0, 20);
+            }
         }
 
     }
