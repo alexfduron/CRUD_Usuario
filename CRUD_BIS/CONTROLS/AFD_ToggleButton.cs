@@ -21,6 +21,8 @@ namespace CRUD_BIS.CONTROLS
         private Color offBackColor = Color.Gray;
         private Color offToggleColor = Color.Gainsboro;
         private bool solidStyle = true;
+        private int borderSize = 3;
+        private int spaceSize = 3;
 
         //Propiedades
         [Description("Modifica el color del fondo al esta activo")]
@@ -72,6 +74,22 @@ namespace CRUD_BIS.CONTROLS
             set { solidStyle = value; this.Invalidate(); }
         }
 
+        [Description("Modifica el ancho del borde")]
+        [Category("AFD Code Advance")]
+        public int BorderSize
+        {
+            get { return borderSize; }
+            set { borderSize = value; this.Invalidate(); }
+        }
+
+        [Description("Modifica el espacio entre el borde y el boton")]
+        [Category("AFD Code Advance")]
+        public int SpaceSize
+        {
+            get { return spaceSize; }
+            set { spaceSize = value; this.Invalidate(); }
+        }
+
         //Constructor
         public AFD_ToggleButton()
         {
@@ -81,9 +99,9 @@ namespace CRUD_BIS.CONTROLS
         //Metodo
         private GraphicsPath GetFigurePath()
         {
-            int ArcSize = this.Height - 1;
-            Rectangle LeftArc = new Rectangle(0, 0, ArcSize, ArcSize);
-            Rectangle RightArc = new Rectangle(this.Width-ArcSize-2, 0, ArcSize, ArcSize);
+            int ArcSize = this.Height;
+            Rectangle LeftArc = new Rectangle(borderSize / 2, borderSize / 2, ArcSize - borderSize, ArcSize - borderSize);
+            Rectangle RightArc = new Rectangle(this.Width - ArcSize + borderSize / 2, borderSize / 2, ArcSize - borderSize, ArcSize - borderSize);
 
             GraphicsPath Path = new GraphicsPath();
             Path.StartFigure();
@@ -96,7 +114,7 @@ namespace CRUD_BIS.CONTROLS
 
         protected override void OnPaint(PaintEventArgs pevent)
         {
-            int ToggleSize = this.Height - 5;
+            int ToggleSize = this.Height - 2 * spaceSize - 2 * borderSize;
             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             pevent.Graphics.Clear(this.Parent.BackColor);
 
@@ -109,11 +127,11 @@ namespace CRUD_BIS.CONTROLS
                 }
                 else
                 {
-                    pevent.Graphics.DrawPath(new Pen(onBackColor, 2), GetFigurePath());
+                    pevent.Graphics.DrawPath(new Pen(onBackColor, borderSize), GetFigurePath());
                 }
                 //Draw the Toggle button
                 pevent.Graphics.FillEllipse(new SolidBrush(onToggleColor), 
-                    new Rectangle(this.Width - this.Height + 1, 2, ToggleSize, ToggleSize));
+                    new Rectangle(this.Width - this.Height + spaceSize + borderSize, borderSize + spaceSize, ToggleSize, ToggleSize));
             }
             else //Turn OFF the control
             {
@@ -124,11 +142,11 @@ namespace CRUD_BIS.CONTROLS
                 }
                 else
                 {
-                    pevent.Graphics.DrawPath(new Pen(offBackColor, 2), GetFigurePath());
+                    pevent.Graphics.DrawPath(new Pen(offBackColor, borderSize), GetFigurePath());
                 }
                 //Draw the Toggle button
                 pevent.Graphics.FillEllipse(new SolidBrush(offToggleColor),
-                    new Rectangle(2, 2, ToggleSize, ToggleSize));
+                    new Rectangle(borderSize + spaceSize, borderSize + spaceSize, ToggleSize, ToggleSize));
             }
 
         }
