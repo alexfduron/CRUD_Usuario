@@ -56,6 +56,8 @@ namespace CRUD_BIS.CONTROLS
             set { borderFocusColor = value; }
         }
 
+        [Description("Habilita el color del borde al estar activo")]
+        [Category("AFD Code Advance")]
         public bool IsFocused
         {
             get { return isFocused; }
@@ -214,7 +216,7 @@ namespace CRUD_BIS.CONTROLS
 
 
         //Eventos
-
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if(_TextChanged != null)
@@ -222,7 +224,7 @@ namespace CRUD_BIS.CONTROLS
                 _TextChanged.Invoke(sender, e);
             }
         }
-
+        /*
         private void textBox1_BackColorChanged(object sender, EventArgs e)
         {
             this.OnBackColorChanged(e);
@@ -232,6 +234,7 @@ namespace CRUD_BIS.CONTROLS
         {
             this.OnVisibleChanged(e);
         }
+        */
 
         //eventos del mouse
         private void textBox1_MouseEnter(object sender, EventArgs e)
@@ -284,7 +287,7 @@ namespace CRUD_BIS.CONTROLS
         {
             this.OnPreviewKeyDown(e);
         }
-
+        
 
         //Eventos de accion
         private void textBox1_DoubleClick(object sender, EventArgs e)
@@ -311,7 +314,7 @@ namespace CRUD_BIS.CONTROLS
         {
             this.OnMouseDoubleClick(e);
         }
-
+        
         //eventos del focus
         private void textBox1_Enter(object sender, EventArgs e)
         {
@@ -336,7 +339,7 @@ namespace CRUD_BIS.CONTROLS
         {
             this.OnValidating(e);
         }
-
+        /*
         //eventos del drag drop
         private void textBox1_DragDrop(object sender, DragEventArgs e)
         {
@@ -367,7 +370,7 @@ namespace CRUD_BIS.CONTROLS
         {
             this.OnQueryContinueDrag(e);
         }
-
+        
         //eventos del layout
         private void textBox1_Layout(object sender, LayoutEventArgs e)
         {
@@ -423,10 +426,13 @@ namespace CRUD_BIS.CONTROLS
         {
             this.OnDockChanged(e);
         }
-
+        */
         private void textBox1_CursorChanged(object sender, EventArgs e)
         {
             this.OnCursorChanged(e);
         }
+
+        
+
     }
 }
