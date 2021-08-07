@@ -332,5 +332,7 @@ namespace CRUD_BIS.PRESENTACION
         {
             this.afD_Button31.Activado = !this.afD_Button31.Activado;
         }
+
+        
     }
 }

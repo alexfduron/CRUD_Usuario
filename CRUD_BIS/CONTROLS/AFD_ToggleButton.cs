@@ -112,11 +112,32 @@ namespace CRUD_BIS.CONTROLS
             return Path;
         }
 
+        private GraphicsPath GetFigurePath2(RectangleF rect, float radius)
+        {
+
+            GraphicsPath Path = new GraphicsPath();
+            Path.StartFigure();
+            Path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            Path.AddArc(rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            Path.AddArc(rect.Width - radius, rect.Height - radius, radius, radius, 0, 90);
+            Path.AddArc(rect.X, rect.Height - radius, radius, radius, 90, 90);
+            Path.CloseFigure();
+
+            return Path;
+
+        }
+
         protected override void OnPaint(PaintEventArgs pevent)
         {
+            base.OnPaint(pevent);//new
+            
             int ToggleSize = this.Height - 2 * spaceSize - 2 * borderSize;
             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             pevent.Graphics.Clear(this.Parent.BackColor);
+
+            RectangleF rectSurface = new RectangleF(0, 0, this.Width, this.Height); //new
+            using (GraphicsPath pathSurface = GetFigurePath2(rectSurface, this.Height)) //new
+            this.Region = new Region(pathSurface); //new
 
             if (this.Checked == true) //Turn ON the control
             {
@@ -148,8 +169,15 @@ namespace CRUD_BIS.CONTROLS
                 pevent.Graphics.FillEllipse(new SolidBrush(offToggleColor),
                     new Rectangle(borderSize + spaceSize, borderSize + spaceSize, ToggleSize, ToggleSize));
             }
-
+            
         }
+
+
+        //agregar fijar tamaño maximo y minimo al toggle button
+        //tamaño maximo alto: this.height <= this.width
+        //tamaño maximo ancho: this.width <= this.height
+        //tamaño minimo alto:
+        //tamaño minimo ancho:
 
 
     }

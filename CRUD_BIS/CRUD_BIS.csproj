@@ -149,6 +149,9 @@
     <Compile Include="PRESENTACION\PersonalData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CONTROLS\AFD_ComboBox.resx">
+      <DependentUpon>AFD_ComboBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CONTROLS\AFD_TextBox.resx">
       <DependentUpon>AFD_TextBox.cs</DependentUpon>
     </EmbeddedResource>

@@ -384,7 +384,21 @@ namespace CRUD_BIS.CONTROLS
             AdjustComboBoxDimensions();
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // AFD_ComboBox
+            // 
+            this.Name = "AFD_ComboBox";
+            this.Load += new System.EventHandler(this.AFD_ComboBox_Load);
+            this.ResumeLayout(false);
 
+        }
 
+        private void AFD_ComboBox_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

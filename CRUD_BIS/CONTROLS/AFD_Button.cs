@@ -128,7 +128,7 @@ namespace CRUD_BIS.CONTROLS
             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
             RectangleF rectSurface = new RectangleF(0, 0, this.Width, this.Height);
-            RectangleF rectBorder = new RectangleF(1, 1, this.Width - 0.8F, this.Height - 1);
+            RectangleF rectBorder = new RectangleF(1, 1, this.Width - 1F, this.Height - 1F);
 
             if(borderRadius > 2) //Rounded button
             {
@@ -174,7 +174,7 @@ namespace CRUD_BIS.CONTROLS
 
         private void Container_BackColorChanged(object sender, EventArgs e)
         {
-            if (this.DesignMode)
+            if (this.DesignMode == true)
             {
                 this.Invalidate();
             }
