@@ -119,6 +119,9 @@
     <Compile Include="CONTROLS\AFD_DatePicker.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CONTROLS\AFD_ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CONTROLS\AFD_RadioButton.cs">
       <SubType>Component</SubType>
     </Compile>

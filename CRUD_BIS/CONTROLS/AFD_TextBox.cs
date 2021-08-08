@@ -25,10 +25,16 @@ namespace CRUD_BIS.CONTROLS
         //Campos
         private Color borderColor = Color.MediumSlateBlue;
         private int borderSize = 2;
-        private bool underlinedStyle = false;
         private Color borderFocusColor = Color.HotPink;
-        private bool isFocused = false;
         private int borderRadius = 0;
+
+        private bool underlinedStyle = false;
+        private bool isFocused = false;
+        
+        private Color placeholderColor = Color.DarkGray;
+        private string placeholderText = "";
+        private bool isPlaceholder = false;
+        private bool isPasswordChar = false;
 
         //Constructor
         public AFD_TextBox()
@@ -72,14 +78,6 @@ namespace CRUD_BIS.CONTROLS
             set { borderFocusColor = value; }
         }
 
-        [Description("Habilita el color del borde al estar activo")]
-        [Category("AFD Code Advance")]
-        public bool IsFocused
-        {
-            get { return isFocused; }
-            set { isFocused = value; this.Invalidate(); }
-        }
-
         [Description("Modifica el tamaño del borde")]
         [Category("AFD Code Advance")]
         public int BorderSize
@@ -95,6 +93,16 @@ namespace CRUD_BIS.CONTROLS
             }
         }
 
+
+
+        [Description("Habilita el color del borde al estar activo")]
+        [Category("AFD Code Advance")]
+        public bool IsFocused
+        {
+            get { return isFocused; }
+            set { isFocused = value; this.Invalidate(); }
+        }
+        
         [Description("Agrega una linea y eliminando el borde")]
         [Category("AFD Code Advance")]
         public bool UnderlinedStyle
@@ -107,8 +115,12 @@ namespace CRUD_BIS.CONTROLS
         [Category("AFD Code Advance")]
         public bool PasswordChar
         {
-            get { return this.textBox1.UseSystemPasswordChar; }
-            set { this.textBox1.UseSystemPasswordChar = value; }
+            get { return isPasswordChar; }
+            set
+            {
+                isPasswordChar = value;
+                this.textBox1.UseSystemPasswordChar = value;
+            }
         }
 
         [Description("Permite agrear mas lineas de texto")]
@@ -155,10 +167,54 @@ namespace CRUD_BIS.CONTROLS
         [Category("AFD Code Advance")]
         public string Texts
         {
-            get { return this.textBox1.Text; }
-            set { this.textBox1.Text = value; }
+            get
+            {
+                if(isPlaceholder == true)
+                {
+                    return "";
+                }
+                else
+                {
+                    return this.textBox1.Text;
+                }
+            }
+            set
+            {
+
+                this.textBox1.Text = value;
+                SetPlaceholder();
+            }
         }
 
+
+
+        [Description("Modifica el color del marcador")]
+        [Category("AFD Code Advance")]
+        public Color PlaceholderColor
+        {
+            get { return placeholderColor; }
+            set
+            {
+                placeholderColor = value;
+                if(isPlaceholder == true)
+                {
+                    this.textBox1.ForeColor = value;
+                }
+            }
+        }
+
+        [Description("Modifica el texto del marcador")]
+        [Category("AFD Code Advance")]
+        public string PlaceholderTexts
+        {
+            get { return placeholderText; }
+            set
+            {
+                placeholderText = value;
+                this.textBox1.Text = "";
+                SetPlaceholder();
+            }
+        }
 
 
         //Metodos
@@ -183,8 +239,9 @@ namespace CRUD_BIS.CONTROLS
                     //Draw border
                     
                     this.Region = new Region(pathBorderSmooth);  //set the rounded region of usercontrol
+                    //this.textBox1.Region = new Region(pathBorderSmooth);
 
-                    if(borderRadius > 15)
+                    if (borderRadius > 15)
                     {
                         SetTextBoxRoundedRegion();
                     }
@@ -296,6 +353,36 @@ namespace CRUD_BIS.CONTROLS
             {
                 pathText = GetFigurePath(this.textBox1.ClientRectangle, borderSize * 2);
                 this.textBox1.Region = new Region(pathText);
+            }
+        }
+
+
+        private void SetPlaceholder()
+        {
+            if(string.IsNullOrWhiteSpace(this.textBox1.Text) && placeholderText != "")
+            {
+                isPlaceholder = true;
+                this.textBox1.Text = placeholderText;
+                this.textBox1.ForeColor = placeholderColor;
+                if(isPasswordChar == true)
+                {
+                    this.textBox1.UseSystemPasswordChar = false;
+                }
+            }
+        }
+
+
+        private void RemovePlaceholder()
+        {
+            if (isPlaceholder == true && placeholderText != "")
+            {
+                isPlaceholder = false;
+                this.textBox1.Text = "";
+                this.textBox1.ForeColor = this.ForeColor;
+                if (isPasswordChar == true)
+                {
+                    this.textBox1.UseSystemPasswordChar = true;
+                }
             }
         }
 
@@ -449,6 +536,7 @@ namespace CRUD_BIS.CONTROLS
         {
             this.OnEnter(e);
             isFocused = true;
+            RemovePlaceholder();
             this.Invalidate();
         }
 
@@ -456,6 +544,7 @@ namespace CRUD_BIS.CONTROLS
         {
             this.OnLeave(e);
             isFocused = false;
+            SetPlaceholder();
             this.Invalidate();
         }
 

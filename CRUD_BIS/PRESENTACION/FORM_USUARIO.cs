@@ -331,8 +331,25 @@ namespace CRUD_BIS.PRESENTACION
         private void afD_Button31_Click(object sender, EventArgs e)
         {
             this.afD_Button31.Activado = !this.afD_Button31.Activado;
+
+            this.afD_ProgressBar1.Value = 10;
+            this.timer1.Start();
+
         }
 
-        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(this.afD_ProgressBar1.Value < this.afD_ProgressBar1.Maximum)
+            {
+                this.afD_ProgressBar1.Value = this.afD_ProgressBar1.Value + 1;
+            }
+
+        }
+
+        private void afD_Button2_Click(object sender, EventArgs e)
+        {
+            this.afD_ProgressBar1.Value = 20;
+            this.timer1.Start();
+        }
     }
 }
