@@ -174,10 +174,29 @@ namespace CRUD_BIS.CONTROLS
 
 
         //agregar fijar tamaño maximo y minimo al toggle button
-        //tamaño maximo alto: this.height <= this.width
-        //tamaño maximo ancho: this.width <= this.height
-        //tamaño minimo alto:
-        //tamaño minimo ancho:
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            if(this.DesignMode == true)
+            {
+                if(this.Height >= this.Width)
+                {
+                    this.Height = this.Width;
+                }
+
+                if(this.Width <= this.Height)
+                {
+                    this.Width = this.Height;
+                }
+
+                if(this.Height <= borderSize * 2 + spaceSize * 2 + 2)
+                {
+                    this.Height = borderSize * 2 + spaceSize * 2 + 5;
+                }
+            }
+        }
+
+
 
 
     }

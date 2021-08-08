@@ -64,13 +64,13 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.afD_TextBox1 = new CRUD_BIS.CONTROLS.AFD_TextBox();
             this.afD_ToggleButton1 = new CRUD_BIS.CONTROLS.AFD_ToggleButton();
             this.afD_DatePicker2 = new CRUD_BIS.CONTROLS.AFD_DatePicker();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.afD_Button2 = new CRUD_BIS.CONTROLS.AFD_Button();
             this.afD_Button1 = new CRUD_BIS.CONTROLS.AFD_Button();
             this.afD_Button21 = new CRUD_BIS.CONTROLS.AFD_Button2();
-            this.afD_TextBox1 = new CRUD_BIS.CONTROLS.AFD_TextBox();
             this.afD_Button31 = new CRUD_BIS.CONTROLS.AFD_Button3();
             this.afD_DatePicker1 = new CRUD_BIS.CONTROLS.AFD_DatePicker();
             this.afD_DatePicker3 = new CRUD_BIS.CONTROLS.AFD_DatePicker();
@@ -501,12 +501,12 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.afD_TextBox1);
             this.panel7.Controls.Add(this.afD_ToggleButton1);
             this.panel7.Controls.Add(this.afD_DatePicker2);
             this.panel7.Controls.Add(this.panel9);
             this.panel7.Controls.Add(this.afD_Button1);
             this.panel7.Controls.Add(this.afD_Button21);
-            this.panel7.Controls.Add(this.afD_TextBox1);
             this.panel7.Controls.Add(this.afD_Button31);
             this.panel7.Controls.Add(this.afD_DatePicker1);
             this.panel7.Controls.Add(this.afD_DatePicker3);
@@ -518,21 +518,50 @@
             this.panel7.Size = new System.Drawing.Size(904, 430);
             this.panel7.TabIndex = 5;
             // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Black;
+            this.panel9.Controls.Add(this.afD_Button2);
+            this.panel9.Location = new System.Drawing.Point(35, 119);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(200, 100);
+            this.panel9.TabIndex = 15;
+            // 
+            // afD_TextBox1
+            // 
+            this.afD_TextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.afD_TextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.afD_TextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.afD_TextBox1.BorderRadius = 15;
+            this.afD_TextBox1.BorderSize = 3;
+            this.afD_TextBox1.Font = new System.Drawing.Font("Consolas", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.afD_TextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.afD_TextBox1.IsFocused = false;
+            this.afD_TextBox1.Location = new System.Drawing.Point(630, 322);
+            this.afD_TextBox1.Multiline = false;
+            this.afD_TextBox1.Name = "afD_TextBox1";
+            this.afD_TextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.afD_TextBox1.PasswordChar = false;
+            this.afD_TextBox1.Size = new System.Drawing.Size(153, 34);
+            this.afD_TextBox1.TabIndex = 17;
+            this.afD_TextBox1.Texts = "";
+            this.afD_TextBox1.UnderlinedStyle = false;
+            // 
             // afD_ToggleButton1
             // 
-            this.afD_ToggleButton1.BorderSize = 10;
+            this.afD_ToggleButton1.BorderSize = 5;
             this.afD_ToggleButton1.Checked = true;
             this.afD_ToggleButton1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.afD_ToggleButton1.Location = new System.Drawing.Point(607, 35);
+            this.afD_ToggleButton1.Location = new System.Drawing.Point(643, 54);
             this.afD_ToggleButton1.MinimumSize = new System.Drawing.Size(45, 22);
             this.afD_ToggleButton1.Name = "afD_ToggleButton1";
             this.afD_ToggleButton1.OffBackColor = System.Drawing.Color.DarkRed;
             this.afD_ToggleButton1.OffToggleColor = System.Drawing.Color.Red;
             this.afD_ToggleButton1.OnBlackColor = System.Drawing.Color.DarkGreen;
             this.afD_ToggleButton1.OnToggleColor = System.Drawing.Color.Lime;
-            this.afD_ToggleButton1.Size = new System.Drawing.Size(165, 86);
+            this.afD_ToggleButton1.Size = new System.Drawing.Size(130, 58);
             this.afD_ToggleButton1.SolidStyle = false;
-            this.afD_ToggleButton1.SpaceSize = 4;
+            this.afD_ToggleButton1.SpaceSize = 5;
             this.afD_ToggleButton1.TabIndex = 4;
             this.afD_ToggleButton1.UseVisualStyleBackColor = true;
             // 
@@ -548,15 +577,6 @@
             this.afD_DatePicker2.SkinColor = System.Drawing.Color.MediumSlateBlue;
             this.afD_DatePicker2.TabIndex = 16;
             this.afD_DatePicker2.TextColor = System.Drawing.Color.White;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Black;
-            this.panel9.Controls.Add(this.afD_Button2);
-            this.panel9.Location = new System.Drawing.Point(35, 119);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(200, 100);
-            this.panel9.TabIndex = 15;
             // 
             // afD_Button2
             // 
@@ -629,25 +649,6 @@
             this.afD_Button21.Transparent2 = 200;
             this.afD_Button21.UseVisualStyleBackColor = false;
             // 
-            // afD_TextBox1
-            // 
-            this.afD_TextBox1.BackColor = System.Drawing.Color.Black;
-            this.afD_TextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.afD_TextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.afD_TextBox1.BorderSize = 10;
-            this.afD_TextBox1.Font = new System.Drawing.Font("Consolas", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.afD_TextBox1.ForeColor = System.Drawing.Color.White;
-            this.afD_TextBox1.IsFocused = false;
-            this.afD_TextBox1.Location = new System.Drawing.Point(607, 319);
-            this.afD_TextBox1.Multiline = false;
-            this.afD_TextBox1.Name = "afD_TextBox1";
-            this.afD_TextBox1.Padding = new System.Windows.Forms.Padding(7);
-            this.afD_TextBox1.PasswordChar = false;
-            this.afD_TextBox1.Size = new System.Drawing.Size(250, 34);
-            this.afD_TextBox1.TabIndex = 14;
-            this.afD_TextBox1.Texts = "";
-            this.afD_TextBox1.UnderlinedStyle = true;
-            // 
             // afD_Button31
             // 
             this.afD_Button31.Location = new System.Drawing.Point(630, 230);
@@ -688,9 +689,9 @@
             // 
             this.afD_ComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.afD_ComboBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.afD_ComboBox1.BorderSize = 2;
+            this.afD_ComboBox1.BorderSize = 10;
             this.afD_ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.afD_ComboBox1.Font = new System.Drawing.Font("Consolas", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.afD_ComboBox1.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.afD_ComboBox1.ForeColor = System.Drawing.Color.DimGray;
             this.afD_ComboBox1.IconColor = System.Drawing.Color.MediumSlateBlue;
             this.afD_ComboBox1.Items.AddRange(new object[] {
@@ -700,10 +701,10 @@
             "Barco"});
             this.afD_ComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.afD_ComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.afD_ComboBox1.Location = new System.Drawing.Point(576, 147);
+            this.afD_ComboBox1.Location = new System.Drawing.Point(576, 144);
             this.afD_ComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
             this.afD_ComboBox1.Name = "afD_ComboBox1";
-            this.afD_ComboBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.afD_ComboBox1.Padding = new System.Windows.Forms.Padding(10);
             this.afD_ComboBox1.Size = new System.Drawing.Size(281, 45);
             this.afD_ComboBox1.TabIndex = 11;
             this.afD_ComboBox1.Texts = "Tren";
@@ -718,7 +719,7 @@
             this.afD_RadioButton2.Location = new System.Drawing.Point(273, 290);
             this.afD_RadioButton2.MinimumSize = new System.Drawing.Size(0, 20);
             this.afD_RadioButton2.Name = "afD_RadioButton2";
-            this.afD_RadioButton2.Size = new System.Drawing.Size(284, 71);
+            this.afD_RadioButton2.Size = new System.Drawing.Size(284, 81);
             this.afD_RadioButton2.TabIndex = 9;
             this.afD_RadioButton2.TabStop = true;
             this.afD_RadioButton2.Text = "afD_RadioButton2\r\nabc123";
@@ -830,8 +831,8 @@
         private CONTROLS.AFD_ComboBox afD_ComboBox1;
         private CONTROLS.AFD_DatePicker afD_DatePicker3;
         private CONTROLS.AFD_DatePicker afD_DatePicker1;
-        private CONTROLS.AFD_TextBox afD_TextBox1;
         private System.Windows.Forms.Panel panel9;
         private CONTROLS.AFD_DatePicker afD_DatePicker2;
+        private CONTROLS.AFD_TextBox afD_TextBox1;
     }
 }

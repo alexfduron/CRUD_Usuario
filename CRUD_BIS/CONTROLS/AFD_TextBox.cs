@@ -28,6 +28,7 @@ namespace CRUD_BIS.CONTROLS
         private bool underlinedStyle = false;
         private Color borderFocusColor = Color.HotPink;
         private bool isFocused = false;
+        private int borderRadius = 0;
 
         //Constructor
         public AFD_TextBox()
@@ -46,6 +47,21 @@ namespace CRUD_BIS.CONTROLS
         {
             get { return borderColor; }
             set { borderColor = value; this.Invalidate(); }
+        }
+
+        [Description("Modifica el radio del borde")]
+        [Category("AFD Code Advance")]
+        public int BorderRadius
+        {
+            get { return borderRadius; }
+            set
+            {
+                if (value >= 0)
+                {
+                    borderRadius = value;
+                    this.Invalidate();
+                }
+            }
         }
 
         [Description("Modifica el color del borde al estar activo")]
@@ -69,7 +85,14 @@ namespace CRUD_BIS.CONTROLS
         public int BorderSize
         {
             get { return borderSize; }
-            set { borderSize = value; this.Invalidate(); }
+            set
+            {
+                if (value >= 0)
+                {
+                    borderSize = value;
+                    this.Invalidate();
+                }
+            }
         }
 
         [Description("Agrega una linea y eliminando el borde")]
@@ -145,46 +168,152 @@ namespace CRUD_BIS.CONTROLS
             base.OnPaint(e);
             Graphics graph = e.Graphics;
 
-            //Draw border
-            using (Pen penBorder = new Pen(borderColor, borderSize))
+            if (borderRadius > 1) //Rounded textbox
             {
-                penBorder.Alignment = PenAlignment.Inset;
+                //campos
+                var rectBorderSmooth = this.ClientRectangle;
+                var rectBorder = Rectangle.Inflate(rectBorderSmooth, -borderSize, -borderSize);
+                int smoothSize = borderSize > 0 ? borderSize : 1;
 
-                if (isFocused == false)
+                using (GraphicsPath pathBorderSmooth = GetFigurePath(rectBorderSmooth, borderRadius))
+                using (GraphicsPath pathBorder = GetFigurePath(rectBorder, borderRadius - borderSize))
+                using (Pen penBorderSmooth = new Pen(this.Parent.BackColor, smoothSize))
+                using(Pen penBorder = new Pen(borderColor, borderSize))
                 {
+                    //Draw border
+                    
+                    this.Region = new Region(pathBorderSmooth);  //set the rounded region of usercontrol
 
-                    if (underlinedStyle == true)
+                    if(borderRadius > 15)
                     {
-                        //line style
-                        graph.DrawLine(penBorder, 0, this.Height - 1, this.Width, this.Height - 1);
+                        SetTextBoxRoundedRegion();
+                    }
+
+                    graph.SmoothingMode = SmoothingMode.AntiAlias;
+
+                    penBorder.Alignment = PenAlignment.Center;
+
+                    if (isFocused == false)
+                    {
+
+                        if (underlinedStyle == true)
+                        {
+                            //line style
+                            graph.DrawPath(penBorderSmooth, pathBorderSmooth);
+                            graph.SmoothingMode = SmoothingMode.None;
+                            graph.DrawLine(penBorder, 0, this.Height - 1, this.Width, this.Height - 1);
+                        }
+                        else
+                        {
+                            //normal style
+                            graph.DrawPath(penBorderSmooth, pathBorderSmooth);
+                            graph.DrawPath(penBorder, pathBorder);
+                        }
+
                     }
                     else
                     {
-                        //normal style
-                        graph.DrawRectangle(penBorder, 0, 0, this.Width - 0.5F, this.Height - 0.5F);
+
+                        penBorder.Color = borderFocusColor;
+
+                        if (underlinedStyle == true)
+                        {
+                            //line style
+                            graph.DrawPath(penBorderSmooth, pathBorderSmooth);
+                            graph.SmoothingMode = SmoothingMode.None;
+                            graph.DrawLine(penBorder, 0, this.Height - 1, this.Width, this.Height - 1);
+                        }
+                        else
+                        {
+                            //normal style
+                            graph.DrawPath(penBorderSmooth, pathBorderSmooth);
+                            graph.DrawPath(penBorder, pathBorder);
+                        }
+
                     }
 
+                    
                 }
-                else
+
+            }
+            else   //Normal textbox
+            {
+
+                //Draw border
+                using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
+                    this.Region = new Region(this.ClientRectangle);
+                    penBorder.Alignment = PenAlignment.Inset;
 
-                    penBorder.Color = borderFocusColor;
-
-                    if (underlinedStyle == true)
+                    if (isFocused == false)
                     {
-                        //line style
-                        graph.DrawLine(penBorder, 0, this.Height - 1, this.Width, this.Height - 1);
+
+                        if (underlinedStyle == true)
+                        {
+                            //line style
+                            graph.DrawLine(penBorder, 0, this.Height - 1, this.Width, this.Height - 1);
+                        }
+                        else
+                        {
+                            //normal style
+                            graph.DrawRectangle(penBorder, 0, 0, this.Width - 0.5F, this.Height - 0.5F);
+                        }
+
                     }
                     else
                     {
-                        //normal style
-                        graph.DrawRectangle(penBorder, 0, 0, this.Width - 0.5F, this.Height - 0.5F);
+
+                        penBorder.Color = borderFocusColor;
+
+                        if (underlinedStyle == true)
+                        {
+                            //line style
+                            graph.DrawLine(penBorder, 0, this.Height - 1, this.Width, this.Height - 1);
+                        }
+                        else
+                        {
+                            //normal style
+                            graph.DrawRectangle(penBorder, 0, 0, this.Width - 0.5F, this.Height - 0.5F);
+                        }
+
                     }
 
                 }
 
             }
+
         }
+
+        private void SetTextBoxRoundedRegion()
+        {
+            GraphicsPath pathText;
+            if(Multiline == true)
+            {
+                pathText = GetFigurePath(this.textBox1.ClientRectangle, borderRadius - borderSize);
+                this.textBox1.Region = new Region(pathText);
+            }
+            else
+            {
+                pathText = GetFigurePath(this.textBox1.ClientRectangle, borderSize * 2);
+                this.textBox1.Region = new Region(pathText);
+            }
+        }
+
+
+        private GraphicsPath GetFigurePath(Rectangle rect, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            float curveSize = radius * 2F;
+
+            path.StartFigure();
+            path.AddArc(rect.X, rect.Y, curveSize, curveSize, 180, 90);
+            path.AddArc(rect.Right - curveSize, rect.Y, curveSize, curveSize, 270, 90);
+            path.AddArc(rect.Right - curveSize, rect.Bottom - curveSize, curveSize, curveSize, 0, 90);
+            path.AddArc(rect.X, rect.Bottom - curveSize, curveSize, curveSize, 90, 90);
+            path.CloseFigure();
+            return path;
+        }
+
 
         protected override void OnResize(EventArgs e)
         {
