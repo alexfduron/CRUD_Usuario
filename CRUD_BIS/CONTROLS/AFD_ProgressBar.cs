@@ -23,15 +23,15 @@ namespace CRUD_BIS.CONTROLS
         None
     }
 
-    class AFD_ProgressBar : ProgressBar
+    public class AFD_ProgressBar : ProgressBar
     {
 
         //Campos
         private Color channelColor = Color.LightSteelBlue;
         private Color sliderColor = Color.RoyalBlue;
-        private Color foreBackColor = Color.RoyalBlue;
-        private int channelHeight = 6;
-        private int sliderHeight = 6;
+        private Color foreBackColor = Color.White;
+        private int channelHeight = 10;
+        private int sliderHeight = 10;
         private TextPosition showValue = TextPosition.Right;
 
         private bool paintedBack = false;
@@ -46,8 +46,9 @@ namespace CRUD_BIS.CONTROLS
         public AFD_ProgressBar()
         {
             this.SetStyle(ControlStyles.UserPaint, true);
-            this.ForeColor = Color.White;
-
+            this.ForeColor = Color.Black;
+            this.Size = new Size(250, 40);
+            this.Font = new Font(this.Font.FontFamily, 12F);
         }
 
 
@@ -134,6 +135,8 @@ namespace CRUD_BIS.CONTROLS
             set { symbolAfter = value; this.Invalidate(); }
         }
 
+        [Description("Agrega el valor maximo despues del texto")]
+        [Category("AFD Code Advance")]
         public bool ShowMaximun
         {
             get { return showMaximun; }
@@ -150,7 +153,7 @@ namespace CRUD_BIS.CONTROLS
                 {
                     //Campos
                     Graphics graph = pevent.Graphics;
-                    Rectangle rectChannel = new Rectangle(0,0,this.Width, channelHeight);
+                    Rectangle rectChannel = new Rectangle(0, 0, this.Width, ChannelHeight);
 
                     using(var brushChannel = new SolidBrush(channelColor))
                     {
@@ -253,12 +256,12 @@ namespace CRUD_BIS.CONTROLS
                 {
                     case TextPosition.Left:
                         rectText.X = 0;
-                        textFormat.Alignment = StringAlignment.Near;
+                        textFormat.Alignment = StringAlignment.Center;
                         break;
 
                     case TextPosition.Right:
                         rectText.X = this.Width - textSize.Width;
-                        textFormat.Alignment = StringAlignment.Far;
+                        textFormat.Alignment = StringAlignment.Center;
                         break;
 
                     case TextPosition.Center:

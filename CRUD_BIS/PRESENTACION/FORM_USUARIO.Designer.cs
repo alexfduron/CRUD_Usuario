@@ -65,8 +65,10 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel9 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.afD_ProgressBar1 = new CRUD_BIS.CONTROLS.AFD_ProgressBar();
             this.afD_TextBox1 = new CRUD_BIS.CONTROLS.AFD_TextBox();
             this.afD_ToggleButton1 = new CRUD_BIS.CONTROLS.AFD_ToggleButton();
@@ -504,6 +506,7 @@
             // 
             // panel7
             // 
+            this.panel7.Controls.Add(this.progressBar1);
             this.panel7.Controls.Add(this.afD_ProgressBar1);
             this.panel7.Controls.Add(this.afD_TextBox1);
             this.panel7.Controls.Add(this.afD_ToggleButton1);
@@ -522,6 +525,16 @@
             this.panel7.Size = new System.Drawing.Size(904, 460);
             this.panel7.TabIndex = 5;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.progressBar1.Location = new System.Drawing.Point(439, 413);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.progressBar1.Size = new System.Drawing.Size(315, 35);
+            this.progressBar1.TabIndex = 19;
+            this.progressBar1.Value = 75;
+            // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.Gray;
@@ -533,25 +546,38 @@
             // 
             // timer1
             // 
+            this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(557, 555);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(156, 47);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // afD_ProgressBar1
             // 
             this.afD_ProgressBar1.ChannelColor = System.Drawing.Color.LightSteelBlue;
-            this.afD_ProgressBar1.ChannelHeight = 20;
-            this.afD_ProgressBar1.ForeBackColor = System.Drawing.Color.Black;
-            this.afD_ProgressBar1.ForeColor = System.Drawing.Color.White;
-            this.afD_ProgressBar1.Location = new System.Drawing.Point(109, 369);
+            this.afD_ProgressBar1.ChannelHeight = 10;
+            this.afD_ProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.afD_ProgressBar1.ForeBackColor = System.Drawing.Color.White;
+            this.afD_ProgressBar1.ForeColor = System.Drawing.Color.Green;
+            this.afD_ProgressBar1.Location = new System.Drawing.Point(79, 383);
             this.afD_ProgressBar1.Name = "afD_ProgressBar1";
             this.afD_ProgressBar1.ShowMaximun = false;
             this.afD_ProgressBar1.ShowValue = CRUD_BIS.CONTROLS.TextPosition.Right;
-            this.afD_ProgressBar1.Size = new System.Drawing.Size(243, 57);
+            this.afD_ProgressBar1.Size = new System.Drawing.Size(250, 40);
             this.afD_ProgressBar1.SliderColor = System.Drawing.Color.RoyalBlue;
-            this.afD_ProgressBar1.SliderHeight = 20;
+            this.afD_ProgressBar1.SliderHeight = 10;
             this.afD_ProgressBar1.SymbolAfter = "";
             this.afD_ProgressBar1.SymbolBefore = "";
             this.afD_ProgressBar1.TabIndex = 18;
-            this.afD_ProgressBar1.Value = 50;
+            this.afD_ProgressBar1.Value = 75;
             // 
             // afD_TextBox1
             // 
@@ -577,17 +603,20 @@
             // 
             // afD_ToggleButton1
             // 
-            this.afD_ToggleButton1.BorderSize = 5;
+            this.afD_ToggleButton1.BorderSize = 10;
             this.afD_ToggleButton1.Checked = true;
             this.afD_ToggleButton1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.afD_ToggleButton1.Location = new System.Drawing.Point(643, 54);
+            this.afD_ToggleButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.afD_ToggleButton1.ForeColor = System.Drawing.Color.White;
+            this.afD_ToggleButton1.Location = new System.Drawing.Point(604, 21);
             this.afD_ToggleButton1.MinimumSize = new System.Drawing.Size(45, 22);
             this.afD_ToggleButton1.Name = "afD_ToggleButton1";
             this.afD_ToggleButton1.OffBackColor = System.Drawing.Color.DarkRed;
             this.afD_ToggleButton1.OffToggleColor = System.Drawing.Color.Red;
             this.afD_ToggleButton1.OnBlackColor = System.Drawing.Color.DarkGreen;
             this.afD_ToggleButton1.OnToggleColor = System.Drawing.Color.Lime;
-            this.afD_ToggleButton1.Size = new System.Drawing.Size(111, 58);
+            this.afD_ToggleButton1.ShowValue = CRUD_BIS.CONTROLS.TextPosition2.Inside;
+            this.afD_ToggleButton1.Size = new System.Drawing.Size(150, 91);
             this.afD_ToggleButton1.SolidStyle = false;
             this.afD_ToggleButton1.SpaceSize = 5;
             this.afD_ToggleButton1.TabIndex = 4;
@@ -748,7 +777,7 @@
             this.afD_RadioButton2.Location = new System.Drawing.Point(273, 263);
             this.afD_RadioButton2.MinimumSize = new System.Drawing.Size(0, 20);
             this.afD_RadioButton2.Name = "afD_RadioButton2";
-            this.afD_RadioButton2.Size = new System.Drawing.Size(284, 81);
+            this.afD_RadioButton2.Size = new System.Drawing.Size(29, 81);
             this.afD_RadioButton2.TabIndex = 9;
             this.afD_RadioButton2.TabStop = true;
             this.afD_RadioButton2.Text = "afD_RadioButton2\r\nabc123";
@@ -778,6 +807,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1511, 734);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.pnl_Menu2);
             this.Controls.Add(this.DGV_Listado);
@@ -789,6 +819,7 @@
             this.Name = "FORM_USUARIO";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FORM_USUARIO_FormClosing);
             this.Load += new System.EventHandler(this.FORM_USUARIO_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -865,5 +896,7 @@
         private CONTROLS.AFD_TextBox afD_TextBox1;
         private System.Windows.Forms.Timer timer1;
         private CONTROLS.AFD_ProgressBar afD_ProgressBar1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

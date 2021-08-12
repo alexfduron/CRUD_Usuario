@@ -16,9 +16,12 @@ namespace CRUD_BIS.PRESENTACION
         public FORM_USUARIO()
         {
             InitializeComponent();
+            Progress = 0;
+            this.afD_TextBox1.Texts = "1";
         }
 
         int ID_Usuario;
+        private int Progress;
 
         private void FORM_USUARIO_Load(object sender, EventArgs e)
         {
@@ -339,10 +342,34 @@ namespace CRUD_BIS.PRESENTACION
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(this.afD_ProgressBar1.Value < this.afD_ProgressBar1.Maximum)
+            MessageBox.Show("3");
+            Progress++;
+            MessageBox.Show(Progress.ToString());
+            if (this.afD_ProgressBar1.Value < this.afD_ProgressBar1.Maximum)
             {
-                this.afD_ProgressBar1.Value = this.afD_ProgressBar1.Value + 1;
+                Progress = Progress + 10;
+                this.afD_ProgressBar1.Value = Progress;
             }
+            if (this.afD_ProgressBar1.Value == this.afD_ProgressBar1.Maximum)
+            {
+                this.timer1.Enabled = false;
+            }
+
+            this.progressBar1.Value += 10;
+            //this.progressBar1.Increment(10);
+            /*
+            if (this.progressBar1.Value < this.progressBar1.Maximum)
+            {
+                this.progressBar1.Value = this.progressBar1.Value + 1;
+            }
+            */
+            if(this.progressBar1.Value == this.progressBar1.Maximum)
+            {
+                this.timer1.Stop();
+                MessageBox.Show("Welcome...");
+            }
+
+            //MessageBox.Show("4");
 
         }
 
@@ -350,6 +377,22 @@ namespace CRUD_BIS.PRESENTACION
         {
             this.afD_ProgressBar1.Value = 20;
             this.timer1.Start();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.afD_ProgressBar1.Value = 0;
+            this.progressBar1.Value = 0;
+            //Progress = 20;
+            //this.progressBar1.Value = Progress;
+            //MessageBox.Show("1");
+            this.timer1.Enabled = true;
+            //MessageBox.Show("2");
+        }
+
+        private void FORM_USUARIO_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.timer1.Enabled = false;
         }
     }
 }

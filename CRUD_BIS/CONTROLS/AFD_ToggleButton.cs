@@ -12,6 +12,15 @@ using System.ComponentModel;
 
 namespace CRUD_BIS.CONTROLS
 {
+
+    public enum TextPosition2
+    {
+        Inside,
+        Center,
+        None
+    }
+
+
     public class AFD_ToggleButton : CheckBox
     {
 
@@ -23,6 +32,7 @@ namespace CRUD_BIS.CONTROLS
         private bool solidStyle = true;
         private int borderSize = 3;
         private int spaceSize = 3;
+        private TextPosition2 showValue = TextPosition2.None;
 
         //Propiedades
         [Description("Modifica el color del fondo al esta activo")]
@@ -90,10 +100,38 @@ namespace CRUD_BIS.CONTROLS
             set { spaceSize = value; this.Invalidate(); }
         }
 
+        [Description("Modifica la posicion del texto")]
+        [Category("AFD Code Advance")]
+        public TextPosition2 ShowValue
+        {
+            get { return showValue; }
+            set { showValue = value; this.Invalidate(); }
+        }
+
+        [Description("Modifica la fuente")]
+        [Category("AFD Code Advance")]
+        [Browsable(true)]
+        [EditorBrowsable(EditorBrowsableState.Always)]
+        public override Font Font
+        {
+            get { return base.Font; }
+            set { base.Font = value; }
+        }
+
+        [Description("Modifica el color de la fuente")]
+        [Category("AFD Code Advance")]
+        public override Color ForeColor
+        {
+            get { return base.ForeColor; }
+            set { base.ForeColor = value; }
+        }
+
+
         //Constructor
         public AFD_ToggleButton()
         {
             this.MinimumSize = new Size(45, 22);
+            this.Font = new Font(this.Font.FontFamily, 12F);
         }
 
         //Metodo
@@ -130,7 +168,9 @@ namespace CRUD_BIS.CONTROLS
         protected override void OnPaint(PaintEventArgs pevent)
         {
             base.OnPaint(pevent);//new
-            
+
+            Graphics graph = pevent.Graphics;
+
             int ToggleSize = this.Height - 2 * spaceSize - 2 * borderSize;
             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             pevent.Graphics.Clear(this.Parent.BackColor);
@@ -153,6 +193,11 @@ namespace CRUD_BIS.CONTROLS
                 //Draw the Toggle button
                 pevent.Graphics.FillEllipse(new SolidBrush(onToggleColor), 
                     new Rectangle(this.Width - this.Height + spaceSize + borderSize, borderSize + spaceSize, ToggleSize, ToggleSize));
+                //Draw text
+                if (showValue != TextPosition2.None)
+                {
+                    DrawValueText(graph, this.Width - this.Height + spaceSize + borderSize, borderSize + spaceSize, "ON");
+                }
             }
             else //Turn OFF the control
             {
@@ -168,6 +213,11 @@ namespace CRUD_BIS.CONTROLS
                 //Draw the Toggle button
                 pevent.Graphics.FillEllipse(new SolidBrush(offToggleColor),
                     new Rectangle(borderSize + spaceSize, borderSize + spaceSize, ToggleSize, ToggleSize));
+                //Draw text
+                if (showValue != TextPosition2.None)
+                {
+                    DrawValueText(graph, spaceSize + borderSize, borderSize + spaceSize, "OFF");
+                }
             }
             
         }
@@ -196,6 +246,53 @@ namespace CRUD_BIS.CONTROLS
             }
         }
 
+
+        //Paint value text
+        private void DrawValueText(Graphics graph, int X, int Y, string text)
+        {
+
+            //Campos
+            var textSize = TextRenderer.MeasureText(text, this.Font);
+            var rectText = new Rectangle(0, 0, textSize.Width, textSize.Height);
+            int ToggleSize = this.Height - 2 * spaceSize - 2 * borderSize;
+
+            using (var brushText = new SolidBrush(this.ForeColor))
+            using (var brushTextBack = new SolidBrush(Color.Transparent))
+            using (var textFormat = new StringFormat())
+            {
+                switch (showValue)
+                {
+                    case TextPosition2.Center:
+                        rectText.X = X - ((rectText.Width - ToggleSize) / 2);
+                        rectText.Y = Y - ((rectText.Height - ToggleSize) / 2);
+                        textFormat.Alignment = StringAlignment.Center;
+                        break;
+
+                    case TextPosition2.Inside:
+                        if (this.Checked == true)
+                        {
+                            rectText.X = X - (X - borderSize + rectText.Width) / 2;
+                            rectText.Y = Y - ((rectText.Height - ToggleSize) / 2);
+                            textFormat.Alignment = StringAlignment.Center;
+                            break;
+                        }
+                        else
+                        {
+                            rectText.X =  (X + ToggleSize) + (this.Width - borderSize - X - ToggleSize - rectText.Width) / 2;
+                            rectText.Y = Y - ((rectText.Height - ToggleSize) / 2);
+                            textFormat.Alignment = StringAlignment.Center;
+                            break;
+                        }
+
+                }
+
+                //Painting
+                graph.FillRectangle(brushTextBack, rectText);
+                graph.DrawString(text, this.Font, brushText, rectText, textFormat);
+
+            }
+
+        }
 
 
 
