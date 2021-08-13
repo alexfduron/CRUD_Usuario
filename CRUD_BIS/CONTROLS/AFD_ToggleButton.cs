@@ -27,15 +27,19 @@ namespace CRUD_BIS.CONTROLS
         //Campos
         private Color onBackColor = Color.MediumSlateBlue;
         private Color onToggleColor = Color.WhiteSmoke;
+        private Color onForeColor = Color.Black;
         private Color offBackColor = Color.Gray;
         private Color offToggleColor = Color.Gainsboro;
+        private Color offForeColor = Color.Black;
         private bool solidStyle = true;
         private int borderSize = 3;
         private int spaceSize = 3;
         private TextPosition2 showValue = TextPosition2.None;
+        private string onSymbol = "ON";
+        private string offSymbol = "OFF";
 
         //Propiedades
-        [Description("Modifica el color del fondo al esta activo")]
+        [Description("Modifica el color del fondo al estar activo")]
         [Category("AFD Code Advance")]
         public Color OnBlackColor
         {
@@ -43,7 +47,7 @@ namespace CRUD_BIS.CONTROLS
             set { onBackColor = value; this.Invalidate(); }
         }
 
-        [Description("Modifica el color del circulo al esta activo")]
+        [Description("Modifica el color del circulo al estar activo")]
         [Category("AFD Code Advance")]
         public Color OnToggleColor
         {
@@ -51,7 +55,23 @@ namespace CRUD_BIS.CONTROLS
             set { onToggleColor = value; this.Invalidate(); }
         }
 
-        [Description("Modifica el color del fondo al esta inactivo")]
+        [Description("Modifica el color del texto al estar activo")]
+        [Category("AFD Code Advance")]
+        public Color OnForeColor
+        {
+            get { return onForeColor; }
+            set { onForeColor = value; this.Invalidate(); }
+        }
+
+        [Description("Agrega un simbolo al texto al estar activo")]
+        [Category("AFD Code Advance")]
+        public string OnSymbol
+        {
+            get { return onSymbol; }
+            set { onSymbol = value; this.Invalidate(); }
+        }
+
+        [Description("Modifica el color del fondo al estar inactivo")]
         [Category("AFD Code Advance")]
         public Color OffBackColor
         {
@@ -59,12 +79,28 @@ namespace CRUD_BIS.CONTROLS
             set { offBackColor = value; this.Invalidate(); }
         }
 
-        [Description("Modifica el color del circulo al esta inactivo")]
+        [Description("Modifica el color del circulo al estar inactivo")]
         [Category("AFD Code Advance")]
         public Color OffToggleColor
         {
             get { return offToggleColor; }
             set { offToggleColor = value; this.Invalidate(); }
+        }
+
+        [Description("Modifica el color del texto al estar inactivo")]
+        [Category("AFD Code Advance")]
+        public Color OffForeColor
+        {
+            get { return offForeColor; }
+            set { offForeColor = value; this.Invalidate(); }
+        }
+
+        [Description("Agrega un simbolo al texto al estar inactivo")]
+        [Category("AFD Code Advance")]
+        public string OffSymbol
+        {
+            get { return offSymbol; }
+            set { offSymbol = value; this.Invalidate(); }
         }
 
         [Description("Modifica el texto del control")]
@@ -184,7 +220,7 @@ namespace CRUD_BIS.CONTROLS
                 //Draw the Control surface
                 if (solidStyle == true)
                 {
-                    pevent.Graphics.FillPath(new SolidBrush(onBackColor), GetFigurePath());
+                    pevent.Graphics.FillPath(new SolidBrush(onBackColor), GetFigurePath2(rectSurface, this.Height));
                 }
                 else
                 {
@@ -196,7 +232,7 @@ namespace CRUD_BIS.CONTROLS
                 //Draw text
                 if (showValue != TextPosition2.None)
                 {
-                    DrawValueText(graph, this.Width - this.Height + spaceSize + borderSize, borderSize + spaceSize, "ON");
+                    DrawValueText(graph, this.Width - this.Height + spaceSize + borderSize, borderSize + spaceSize, onSymbol);
                 }
             }
             else //Turn OFF the control
@@ -204,7 +240,7 @@ namespace CRUD_BIS.CONTROLS
                 //Draw the Control surface
                 if (solidStyle == true)
                 {
-                    pevent.Graphics.FillPath(new SolidBrush(offBackColor), GetFigurePath());
+                    pevent.Graphics.FillPath(new SolidBrush(offBackColor), GetFigurePath2(rectSurface, this.Height));
                 }
                 else
                 {
@@ -216,7 +252,7 @@ namespace CRUD_BIS.CONTROLS
                 //Draw text
                 if (showValue != TextPosition2.None)
                 {
-                    DrawValueText(graph, spaceSize + borderSize, borderSize + spaceSize, "OFF");
+                    DrawValueText(graph, spaceSize + borderSize, borderSize + spaceSize, offSymbol);
                 }
             }
             
@@ -256,41 +292,50 @@ namespace CRUD_BIS.CONTROLS
             var rectText = new Rectangle(0, 0, textSize.Width, textSize.Height);
             int ToggleSize = this.Height - 2 * spaceSize - 2 * borderSize;
 
-            using (var brushText = new SolidBrush(this.ForeColor))
+            
+            using (var brushTexton = new SolidBrush(onForeColor))
+            using (var brushTextoff = new SolidBrush(offForeColor))
             using (var brushTextBack = new SolidBrush(Color.Transparent))
             using (var textFormat = new StringFormat())
-            {
-                switch (showValue)
                 {
-                    case TextPosition2.Center:
-                        rectText.X = X - ((rectText.Width - ToggleSize) / 2);
-                        rectText.Y = Y - ((rectText.Height - ToggleSize) / 2);
-                        textFormat.Alignment = StringAlignment.Center;
-                        break;
-
-                    case TextPosition2.Inside:
-                        if (this.Checked == true)
-                        {
-                            rectText.X = X - (X - borderSize + rectText.Width) / 2;
+                    switch (showValue)
+                    {
+                        case TextPosition2.Center:
+                            rectText.X = X - ((rectText.Width - ToggleSize) / 2);
                             rectText.Y = Y - ((rectText.Height - ToggleSize) / 2);
                             textFormat.Alignment = StringAlignment.Center;
                             break;
-                        }
-                        else
-                        {
-                            rectText.X =  (X + ToggleSize) + (this.Width - borderSize - X - ToggleSize - rectText.Width) / 2;
-                            rectText.Y = Y - ((rectText.Height - ToggleSize) / 2);
-                            textFormat.Alignment = StringAlignment.Center;
-                            break;
-                        }
 
+                        case TextPosition2.Inside:
+                            if (this.Checked == true)
+                            {
+                                rectText.X = X - (X - borderSize + rectText.Width) / 2;
+                                rectText.Y = Y - ((rectText.Height - ToggleSize) / 2);
+                                textFormat.Alignment = StringAlignment.Center;
+                                break;
+                            }
+                            else
+                            {
+                                rectText.X = (X + ToggleSize) + (this.Width - borderSize - X - ToggleSize - rectText.Width) / 2;
+                                rectText.Y = Y - ((rectText.Height - ToggleSize) / 2);
+                                textFormat.Alignment = StringAlignment.Center;
+                                break;
+                            }
+
+                    }
+
+                    //Painting
+                    graph.FillRectangle(brushTextBack, rectText);
+                if (this.Checked == true)
+                {
+                    graph.DrawString(text, this.Font, brushTexton, rectText, textFormat);
+                }
+                else
+                {
+                    graph.DrawString(text, this.Font, brushTextoff, rectText, textFormat);
                 }
 
-                //Painting
-                graph.FillRectangle(brushTextBack, rectText);
-                graph.DrawString(text, this.Font, brushText, rectText, textFormat);
-
-            }
+                }
 
         }
 

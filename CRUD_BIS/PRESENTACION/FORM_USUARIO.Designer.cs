@@ -520,7 +520,8 @@
             this.panel7.Controls.Add(this.afD_ComboBox1);
             this.panel7.Controls.Add(this.afD_RadioButton2);
             this.panel7.Controls.Add(this.afD_RadioButton1);
-            this.panel7.Location = new System.Drawing.Point(121, 214);
+            this.panel7.ForeColor = System.Drawing.Color.White;
+            this.panel7.Location = new System.Drawing.Point(139, 219);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(904, 460);
             this.panel7.TabIndex = 5;
@@ -603,22 +604,25 @@
             // 
             // afD_ToggleButton1
             // 
-            this.afD_ToggleButton1.BorderSize = 10;
+            this.afD_ToggleButton1.BorderSize = 4;
             this.afD_ToggleButton1.Checked = true;
             this.afD_ToggleButton1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.afD_ToggleButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.afD_ToggleButton1.ForeColor = System.Drawing.Color.White;
-            this.afD_ToggleButton1.Location = new System.Drawing.Point(604, 21);
+            this.afD_ToggleButton1.Font = new System.Drawing.Font("Impact", 15F, System.Drawing.FontStyle.Bold);
+            this.afD_ToggleButton1.ForeColor = System.Drawing.Color.Black;
+            this.afD_ToggleButton1.Location = new System.Drawing.Point(583, 23);
             this.afD_ToggleButton1.MinimumSize = new System.Drawing.Size(45, 22);
             this.afD_ToggleButton1.Name = "afD_ToggleButton1";
             this.afD_ToggleButton1.OffBackColor = System.Drawing.Color.DarkRed;
+            this.afD_ToggleButton1.OffForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.afD_ToggleButton1.OffSymbol = "OFF";
             this.afD_ToggleButton1.OffToggleColor = System.Drawing.Color.Red;
             this.afD_ToggleButton1.OnBlackColor = System.Drawing.Color.DarkGreen;
+            this.afD_ToggleButton1.OnForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.afD_ToggleButton1.OnSymbol = "ON";
             this.afD_ToggleButton1.OnToggleColor = System.Drawing.Color.Lime;
-            this.afD_ToggleButton1.ShowValue = CRUD_BIS.CONTROLS.TextPosition2.Inside;
-            this.afD_ToggleButton1.Size = new System.Drawing.Size(150, 91);
-            this.afD_ToggleButton1.SolidStyle = false;
-            this.afD_ToggleButton1.SpaceSize = 5;
+            this.afD_ToggleButton1.ShowValue = CRUD_BIS.CONTROLS.TextPosition2.Center;
+            this.afD_ToggleButton1.Size = new System.Drawing.Size(171, 70);
+            this.afD_ToggleButton1.SpaceSize = 4;
             this.afD_ToggleButton1.TabIndex = 4;
             this.afD_ToggleButton1.UseVisualStyleBackColor = true;
             // 
@@ -747,7 +751,7 @@
             // 
             this.afD_ComboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.afD_ComboBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.afD_ComboBox1.BorderSize = 10;
+            this.afD_ComboBox1.BorderSize = 5;
             this.afD_ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.afD_ComboBox1.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.afD_ComboBox1.ForeColor = System.Drawing.Color.DimGray;
@@ -759,10 +763,10 @@
             "Barco"});
             this.afD_ComboBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
             this.afD_ComboBox1.ListTextColor = System.Drawing.Color.DimGray;
-            this.afD_ComboBox1.Location = new System.Drawing.Point(576, 144);
+            this.afD_ComboBox1.Location = new System.Drawing.Point(583, 158);
             this.afD_ComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
             this.afD_ComboBox1.Name = "afD_ComboBox1";
-            this.afD_ComboBox1.Padding = new System.Windows.Forms.Padding(10);
+            this.afD_ComboBox1.Padding = new System.Windows.Forms.Padding(5);
             this.afD_ComboBox1.Size = new System.Drawing.Size(281, 45);
             this.afD_ComboBox1.TabIndex = 11;
             this.afD_ComboBox1.Texts = "Tren";
