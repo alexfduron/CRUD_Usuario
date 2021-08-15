@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,11 +16,37 @@ namespace CRUD_BIS.CONTROLS
 
     public enum TextPosition
     {
-        Left,
-        Right,
-        Center,
-        Sliding,
+        Outside_Left,
+        Outside_Right,
+        Outside_Center,
+        Outside_Sliding,
+        Inside_Left,
+        Inside_Center,
+        Inside_Right,
+        Inside_Sliding,
         None
+    }
+
+    public enum Esquina
+    {
+        Rectangular,
+        Redondeado
+    }
+
+    public enum Autoforma_Channel
+    {
+        Horizontal,
+        Vertical,
+        Circular,
+        Radial,
+        Infinito
+    }
+
+    public enum Autoforma_Slider
+    {
+        Barra,
+        Cuadro,
+        Circulo
     }
 
     public class AFD_ProgressBar : ProgressBar
@@ -32,7 +58,7 @@ namespace CRUD_BIS.CONTROLS
         private Color foreBackColor = Color.White;
         private int channelHeight = 10;
         private int sliderHeight = 10;
-        private TextPosition showValue = TextPosition.Right;
+        private TextPosition showValue = TextPosition.Outside_Right;
 
         private bool paintedBack = false;
         private bool stopPainting = false;
@@ -40,7 +66,9 @@ namespace CRUD_BIS.CONTROLS
         private string symbolBefore = "";
         private string symbolAfter = "";
 
-        
+        private Color borderColor = Color.Green;
+        private int borderSize = 2;
+        private bool borderShow = false;
 
         //Constructor
         public AFD_ProgressBar()
@@ -49,12 +77,16 @@ namespace CRUD_BIS.CONTROLS
             this.ForeColor = Color.Black;
             this.Size = new Size(250, 40);
             this.Font = new Font(this.Font.FontFamily, 12F);
+            this.showValue = TextPosition.None;
+            this.symbolAfter = "";
+            this.symbolBefore = "";
+            this.borderShow = false;
         }
 
 
         //Propiedades
         [Description("Modifica el color del canal")]
-        [Category("AFD Code Advance")]
+        [Category("AFD Code Advance Bar")]
         public Color ChannelColor
         {
             get { return channelColor; }
@@ -62,7 +94,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Modifica el color del deslizador")]
-        [Category("AFD Code Advance")]
+        [Category("AFD Code Advance Bar")]
         public Color SliderColor
         {
             get { return sliderColor; }
@@ -70,7 +102,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Modifica el color del fondo")]
-        [Category("AFD Code Advance")]
+        [Category("AFD Code Advance Tex")]
         public Color ForeBackColor
         {
             get { return foreBackColor; }
@@ -78,7 +110,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Modifica el tamaño del canal")]
-        [Category("AFD Code Advance")]
+        [Category("AFD Code Advance Bar")]
         public int ChannelHeight
         {
             get { return channelHeight; }
@@ -86,7 +118,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Modifica el tamaño del deslizador")]
-        [Category("AFD Code Advance")]
+        [Category("AFD Code Advance Bar")]
         public int SliderHeight
         {
             get { return sliderHeight; }
@@ -94,7 +126,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Modifica la posicion del texto")]
-        [Category("AFD Code Advance")]
+        [Category("AFD Code Advance Tex")]
         public TextPosition ShowValue
         {
             get { return showValue; }
@@ -102,7 +134,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Modifica la fuente")]
-        [Category("AFD Code Advance")]
+        [Category("AFD Code Advance Tex")]
         [Browsable(true)]
         [EditorBrowsable(EditorBrowsableState.Always)]
         public override Font Font
@@ -112,7 +144,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Modifica el color de la fuente")]
-        [Category("AFD Code Advance")]
+        [Category("AFD Code Advance Tex")]
         public override Color ForeColor
         {
             get { return base.ForeColor; }
@@ -120,7 +152,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Agrega un simbolo antes del texto")]
-        [Category("AFD Code Advance")]
+        [Category("AFD Code Advance Tex")]
         public string SymbolBefore
         {
             get { return symbolBefore; }
@@ -128,7 +160,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Agrega un simbolo despues del texto")]
-        [Category("AFD Code Advance")]
+        [Category("AFD Code Advance Tex")]
         public string SymbolAfter
         {
             get { return symbolAfter; }
@@ -136,7 +168,7 @@ namespace CRUD_BIS.CONTROLS
         }
 
         [Description("Agrega el valor maximo despues del texto")]
-        [Category("AFD Code Advance")]
+        [Category("AFD Code Advance Tex")]
         public bool ShowMaximun
         {
             get { return showMaximun; }
@@ -154,16 +186,22 @@ namespace CRUD_BIS.CONTROLS
                     //Campos
                     Graphics graph = pevent.Graphics;
                     Rectangle rectChannel = new Rectangle(0, 0, this.Width, ChannelHeight);
+                    string text = symbolBefore + this.Value.ToString() + symbolAfter;
+                    var textSize = TextRenderer.MeasureText(text.Trim(), this.Font);
 
-                    using(var brushChannel = new SolidBrush(channelColor))
+                    using (var brushChannel = new SolidBrush(channelColor))
                     {
-                        if(channelHeight >= sliderHeight)
+                        if(channelHeight >= sliderHeight && channelHeight >= textSize.Height)
                         {
                             rectChannel.Y = this.Height - channelHeight;
                         }
-                        else
+                        else if(sliderHeight >= channelHeight && sliderHeight >= textSize.Height) 
                         {
                             rectChannel.Y = this.Height - ((channelHeight + sliderHeight) / 2);
+                        }
+                        else
+                        {
+                            rectChannel.Y = this.Height - ((channelHeight + textSize.Height) / 2);
                         }
 
                         //Painting
@@ -198,15 +236,22 @@ namespace CRUD_BIS.CONTROLS
                 double scaleFactor = (((double)(this.Value - this.Minimum)) / ((double)(this.Maximum - this.Minimum)));
                 int sliderWidth = (int)(this.Width * scaleFactor);
                 Rectangle rectSlicer = new Rectangle(0, 0, sliderWidth, sliderHeight);
+                string text = symbolBefore + this.Value.ToString() + symbolAfter;
+                var textSize = TextRenderer.MeasureText(text.Trim(), this.Font);
+
                 using (var brushSlicer = new SolidBrush(sliderColor))
                 {
-                    if(sliderHeight >= channelHeight)
+                    if(sliderHeight >= channelHeight && sliderHeight >= textSize.Height)
                     {
                         rectSlicer.Y = this.Height - sliderHeight;
                     }
-                    else
+                    else if(channelHeight >= sliderHeight && channelHeight >= textSize.Height)
                     {
                         rectSlicer.Y = this.Height - ((sliderHeight + channelHeight) / 2);
+                    }
+                    else
+                    {
+                        rectSlicer.Y = this.Height - ((sliderHeight + textSize.Height) / 2);
                     }
 
                     //Painting
@@ -245,8 +290,8 @@ namespace CRUD_BIS.CONTROLS
             {
                 text = text + "/" + symbolBefore + this.Maximum.ToString() + symbolAfter;
             }
-            var textSize = TextRenderer.MeasureText(text, this.Font);
-            var rectText = new Rectangle(0, 0, textSize.Width, textSize.Height + 2);
+            var textSize = TextRenderer.MeasureText(text.Trim(), this.Font);
+            var rectText = new Rectangle(0, 0, textSize.Width, textSize.Height);
 
             using (var brushText = new SolidBrush(this.ForeColor))
             using (var brushTextBack = new SolidBrush(foreBackColor))
@@ -254,36 +299,74 @@ namespace CRUD_BIS.CONTROLS
             {
                 switch (showValue)
                 {
-                    case TextPosition.Left:
+                    case TextPosition.Outside_Left:
                         rectText.X = 0;
                         textFormat.Alignment = StringAlignment.Center;
                         break;
 
-                    case TextPosition.Right:
+                    case TextPosition.Inside_Left:
+                        rectText.X = 0;
+                        rectText.Y = rectSlicer.Y + (rectSlicer.Height - textSize.Height) / 2;
+                        textFormat.Alignment = StringAlignment.Center;
+                        break;
+
+                    case TextPosition.Outside_Right:
                         rectText.X = this.Width - textSize.Width;
                         textFormat.Alignment = StringAlignment.Center;
                         break;
 
-                    case TextPosition.Center:
+                    case TextPosition.Inside_Right:
+                        rectText.X = this.Width - textSize.Width;
+                        rectText.Y = rectSlicer.Y + (rectSlicer.Height - textSize.Height) / 2;
+                        textFormat.Alignment = StringAlignment.Center;
+                        break;
+
+                    case TextPosition.Outside_Center:
                         rectText.X = (this.Width - textSize.Width) / 2;
                         textFormat.Alignment = StringAlignment.Center;
                         break;
 
-                    case TextPosition.Sliding:
-                        rectText.X = sliderWidth - textSize.Width;
+                    case TextPosition.Inside_Center:
+                        rectText.X = (this.Width - textSize.Width) / 2;
+                        rectText.Y = rectSlicer.Y + (rectSlicer.Height - textSize.Height) / 2;
                         textFormat.Alignment = StringAlignment.Center;
-                        //Clear previus text surface
-                        using(var brushClear = new SolidBrush(this.Parent.BackColor))
+                        break;
+
+                    case TextPosition.Outside_Sliding:
+                        if(sliderWidth <= textSize.Width)
                         {
-                            var rect = rectSlicer;
-                            rect.Y = rectText.Y;
-                            rect.Height = rectText.Height;
-                            graph.FillRectangle(brushClear, rect);
+                            rectText.X = 0;
                         }
+                        else
+                        {
+                            rectText.X = sliderWidth - textSize.Width;
+                        }
+                        textFormat.Alignment = StringAlignment.Center;
+                        break;
+
+                    case TextPosition.Inside_Sliding:
+                        if (sliderWidth <= textSize.Width)
+                        {
+                            rectText.X = 0;
+                        }
+                        else
+                        {
+                            rectText.X = sliderWidth - textSize.Width;
+                        }
+                        rectText.Y = rectSlicer.Y + (rectSlicer.Height - textSize.Height) / 2;
+                        textFormat.Alignment = StringAlignment.Center;
                         break;
 
                 }
 
+                //Clear previus text surface
+                using (var brushClear = new SolidBrush(this.Parent.BackColor))
+                {
+                    //graph.FillRectangle(brushClear, rectText);
+                    //graph.Clear(Color.Transparent);
+                    //graph.DrawString(text, this.Font, Color.Transparent, rectText, textFormat);
+                }
+                
                 //Painting
                 graph.FillRectangle(brushTextBack, rectText);
                 graph.DrawString(text, this.Font, brushText, rectText, textFormat);
@@ -291,13 +374,6 @@ namespace CRUD_BIS.CONTROLS
             }
 
         }
-
-
-        
-
-
-
-
 
 
     }
